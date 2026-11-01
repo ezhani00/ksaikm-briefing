@@ -90,7 +90,7 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
 </head>
 <body>
 
-<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span></div></div>
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
 
 <header class="hero"><div class="inner">
   <div class="eyebrow">Daily Briefing · 2026.11.01</div>
@@ -108,58 +108,39 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
     <p class="en">A Multi-Label Hyperspectral Tongue Coating Classification Network Based on Cross-Image Collaborative Learning and Second-Order Spectral Interaction</p>
     <p class="src">Journal of Imaging Informatics in Medicine (2026) · Xianchen Jia 외</p>
     <div class="result"><span class="label">주요 성과</span><p>초분광 설태 영상에서 다중 라벨 분류 <mark>mAP 85.30%</mark>, 전체 <mark>F1 87.22%</mark> 달성</p></div>
-    <dl>
-      <div><dt>연구 배경</dt><dd>설태의 색택, 두께, 점착도 등 복합 속성 공존으로 인한 특성 얽힘(Entanglement) 문제 해결</dd></div>
-      <div><dt>핵심 모델</dt><dd>교차 이미지 공간-스펙트럼 협력 어텐션(CSCA)과 교차 그룹 2차 스펙트럼 상호작용(GSC) 모듈을 결합한 HSTIC-Net 구축</dd></div>
-      <div><dt>임상적 의의</dt><dd>일반 카메라 사진으로는 가려내기 어려운 설태의 색, 두께, 끈적임을 빛의 파장별 정보까지 담은 특수 영상으로 한 번에 구분합니다. 설태를 눈대중이 아니라 수치로 읽는 객관적인 판독 기준을 만드는 연구입니다.</dd></div>
-    </dl>
+    <dl><div><dt>연구 배경</dt><dd>설태의 색택, 두께, 점착도 등 복합 속성 공존으로 인한 특성 얽힘(Entanglement) 문제 해결</dd></div><div><dt>핵심 모델</dt><dd>교차 이미지 공간-스펙트럼 협력 어텐션(CSCA)과 교차 그룹 2차 스펙트럼 상호작용(GSC) 모듈을 결합한 HSTIC-Net 구축</dd></div><div><dt>임상적 의의</dt><dd>일반 카메라 사진으로는 가려내기 어려운 설태의 색, 두께, 끈적임을 빛의 파장별 정보까지 담은 특수 영상으로 한 번에 구분합니다. 설태를 눈대중이 아니라 수치로 읽는 객관적인 판독 기준을 만드는 연구입니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42839153/" target="_blank" rel="noopener">PubMed 원문</a><a class="btn line" href="https://doi.org/10.1007/s10278-026-02301-7" target="_blank" rel="noopener">DOI</a><span class="pmid">PMID 42839153</span></div>
   </article>
-
   <article class="card">
     <div class="num">02</div>
     <h3>설진 멀티태스크 AI</h3>
     <p class="en">SSC-Net: A multi-task joint learning network for tongue image segmentation and multi-label classification</p>
     <p class="src">Digital Health (2025) · Xiaopeng Sha 외</p>
     <div class="result"><span class="label">주요 성과</span><p>설체 분할 <mark>DSC 0.9943</mark>, 설색·설태색·태후·치흔·열문 다중 라벨 분류 <mark>mAP 92.02</mark>, <mark>F1 0.851</mark> 달성</p></div>
-    <dl>
-      <div><dt>연구 대상</dt><dd>북경중의약대 1,500례 BUCM 임상 설진 데이터셋 기반 다중 라벨 어노테이션</dd></div>
-      <div><dt>핵심 모델</dt><dd>SE-ResNeXt50 공유 인코더, ROI 정렬 모듈, 다중 헤드 카테고리 잔차 어텐션(CSRA)을 결합한 다중 작업 신경망 SSC-Net 개발</dd></div>
-      <div><dt>임상적 의의</dt><dd>혀 사진에서 혀 부분을 떼어 내는 일과, 설색, 설태색, 태의 두께, 치흔, 열문을 가려내는 일을 한 번에 처리합니다. 진료실에서 혀 사진 한 장으로 설진 소견 정리를 빠르고 정확하게 돕는 도구로 이어질 수 있습니다.</dd></div>
-    </dl>
+    <dl><div><dt>연구 대상</dt><dd>북경중의약대 1,500례 BUCM 임상 설진 데이터셋 기반 다중 라벨 어노테이션</dd></div><div><dt>핵심 모델</dt><dd>SE-ResNeXt50 공유 인코더, ROI 정렬 모듈, 다중 헤드 카테고리 잔차 어텐션(CSRA)을 결합한 다중 작업 신경망 SSC-Net 개발</dd></div><div><dt>임상적 의의</dt><dd>혀 사진에서 혀 부분을 떼어 내는 일과, 설색, 설태색, 태의 두께, 치흔, 열문을 가려내는 일을 한 번에 처리합니다. 진료실에서 혀 사진 한 장으로 설진 소견 정리를 빠르고 정확하게 돕는 도구로 이어질 수 있습니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/40416075/" target="_blank" rel="noopener">PubMed 원문</a><a class="btn line" href="https://doi.org/10.1177/20552076251343696" target="_blank" rel="noopener">DOI</a><span class="pmid">PMID 40416075</span></div>
   </article>
-
   <article class="card">
     <div class="num">03</div>
     <h3>변증 마이크로바이옴</h3>
     <p class="en">Quantitative mapping of gut microbiota feature importance to TCM syndrome elements in clinical T2DM stages</p>
     <p class="src">Frontiers in Cellular and Infection Microbiology (2026) · Ruifang Liu 외</p>
     <div class="result"><span class="label">주요 성과</span><p>비(脾, <mark>4.9%</mark> Bacteroides/Faecalibacterium), 습(濕, <mark>3.4%</mark> Veillonella), 담(痰, <mark>1.0%</mark> Bifidobacterium) 규명</p></div>
-    <dl>
-      <div><dt>연구 대상</dt><dd>당뇨 전단계, T2DM, 합병증 단계 환자 154명 대상 16S rDNA 분석 및 증소(비, 습, 담 등) 정량 평가</dd></div>
-      <div><dt>핵심 모델</dt><dd>멘델 무작위화(MR)와 SVM 머신러닝(SHAP)으로 증소별 미생물 피처 중요도 매핑 후 34례 분변이식(FMT) 임상 검증</dd></div>
-      <div><dt>임상적 의의</dt><dd>비(脾), 습(濕), 담(痰) 같은 증소를 장내 세균의 종류와 비율이라는 객관적인 수치와 연결했습니다. 당뇨 전단계에서 합병증 단계까지 병기마다 달라지는 증을 더 세밀하게 구분하는 근거가 될 수 있습니다.</dd></div>
-    </dl>
+    <dl><div><dt>연구 대상</dt><dd>당뇨 전단계, T2DM, 합병증 단계 환자 154명 대상 16S rDNA 분석 및 증소(비, 습, 담 등) 정량 평가</dd></div><div><dt>핵심 모델</dt><dd>멘델 무작위화(MR)와 SVM 머신러닝(SHAP)으로 증소별 미생물 피처 중요도 매핑 후 34례 분변이식(FMT) 임상 검증</dd></div><div><dt>임상적 의의</dt><dd>비(脾), 습(濕), 담(痰) 같은 증소를 장내 세균의 종류와 비율이라는 객관적인 수치와 연결했습니다. 당뇨 전단계에서 합병증 단계까지 병기마다 달라지는 증을 더 세밀하게 구분하는 근거가 될 수 있습니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42851358/" target="_blank" rel="noopener">PubMed 원문</a><a class="btn line" href="https://doi.org/10.3389/fcimb.2026.1910757" target="_blank" rel="noopener">DOI</a><span class="pmid">PMID 42851358</span></div>
   </article>
-
   <article class="card">
     <div class="num">04</div>
     <h3>변증 면역학 AI</h3>
     <p class="en">Immune Repertoire Profiling Reveals Distinct Adaptive Immune Signatures of Dampness ZHENG Across Psoriasis, Rheumatoid Arthritis and Ulcerative Colitis</p>
     <p class="src">Cell Proliferation (2026) · Lipeng Tang 외</p>
     <div class="result"><span class="label">주요 성과</span><p>독립 검증 코호트에서 <mark>AUC 0.804</mark>, 정확도 <mark>74.7%</mark>로 습증 감별</p></div>
-    <dl>
-      <div><dt>연구 대상</dt><dd>건선, 류마티스 관절염, 궤양성 대장염 환자 대상 B/T세포 수용체 면역 레퍼토리 프로파일링</dd></div>
-      <div><dt>핵심 모델</dt><dd>습증(Dampness ZHENG) 특이적 D50 지수 증가 및 TRAV20 등 V-유전자 편향 사용 분석 후 3개 V-세그먼트 머신러닝 모델 구축</dd></div>
-      <div><dt>임상적 의의</dt><dd>건선, 류마티스 관절염, 궤양성 대장염은 서로 다른 병이지만 습증이라는 같은 증으로 묶어 볼 수 있다는 이병동치(異病同治)의 관점을, 면역세포 수용체의 특징이라는 객관적 지표로 확인했습니다. 습증을 가리는 보조 지표로 연구할 수 있는 가능성을 보여 줍니다.</dd></div>
-    </dl>
+    <dl><div><dt>연구 대상</dt><dd>건선, 류마티스 관절염, 궤양성 대장염 환자 대상 B/T세포 수용체 면역 레퍼토리 프로파일링</dd></div><div><dt>핵심 모델</dt><dd>습증(Dampness ZHENG) 특이적 D50 지수 증가 및 TRAV20 등 V-유전자 편향 사용 분석 후 3개 V-세그먼트 머신러닝 모델 구축</dd></div><div><dt>임상적 의의</dt><dd>건선, 류마티스 관절염, 궤양성 대장염은 서로 다른 병이지만 습증이라는 같은 증으로 묶어 볼 수 있다는 이병동치(異病同治)의 관점을, 면역세포 수용체의 특징이라는 객관적 지표로 확인했습니다. 습증을 가리는 보조 지표로 연구할 수 있는 가능성을 보여 줍니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42470161/" target="_blank" rel="noopener">PubMed 원문</a><a class="btn line" href="https://doi.org/10.1111/cpr.70265" target="_blank" rel="noopener">DOI</a><span class="pmid">PMID 42470161</span></div>
   </article>
 </div></main>
 
-<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
 
 </body>
 </html>
