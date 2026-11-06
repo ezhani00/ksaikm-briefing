@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.06">
+<meta property="og:description" content="오늘의 대표논문 · 돌발성 난청, 치료 전 혈액검사로 회복 가능성을 가늠한다 (외 3편)">
+<meta property="og:image" content="https://ezhani00.github.io/ksaikm-briefing/archive/img/2026-11-06.png">
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.06</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>돌발성 난청, 치료 전 혈액검사로 회복 가능성을 가늠한다</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">01 · 한의 이비인후·변증 AI</div>
+    <p class="en">An explainable machine learning model for prognosis prediction in sudden sensorineural hearing loss under integrated therapy</p>
+    <p class="src">Frontiers in Medicine (2026.06; 13:1845137)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>기체혈어형 돌발성 난청 환자 227명의 치료 전 혈액검사 등으로, 침구·한약 통합 치료 뒤 청력이 회복될지 예측하는 AI를 만들었습니다. 회복에 가장 영향이 컸던 것은 APTT(혈액 응고 검사), 발병 후 경과 기간, 혈소판 수, 총단백이었고, 발병 10일 이내가 중요한 치료 시점으로 나타났습니다. 진료 첫날 치료 반응을 가늠하는 참고 자료가 될 수 있습니다. 다만 예측 성능은 중간 수준(AUC 0.718)이고 다른 병원에서의 검증은 아직 없습니다.</p></div>
+    <img src="https://ezhani00.github.io/ksaikm-briefing/archive/img/2026-11-06.png" alt="대표논문 카드" style="width:100%;border-radius:14px">
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42305975/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>한의 이비인후·변증 AI</h3>
+    <p class="en">An explainable machine learning model for prognosis prediction in sudden sensorineural hearing loss under integrated therapy</p>
+    <p class="src">Frontiers in Medicine (2026.06; 13:1845137)</p>
+    <div class="result"><span class="label">주요 성과</span><p>검증셋에서 <mark>71.8%</mark>의 판별력(<mark>AUC 0.718</mark>)과 우수한 임상 순이익을 달성했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>결과 기반 층화 표본추출과 철저한 훈련-검증 분리를 통해 데이터 누출을 차단한 상태에서 XGBoost 머신러닝 모델을 학습시켰습니다. 검증셋에서 71.8%의 판별력(AUC 0.718)과 우수한 임상 순이익을 달성했습니다. SHAP 설명 가능한 AI 분석을 통해 혈액 응고 지표인 활성화 부분트롬보플라스틴 시간(APTT), 유병 기간, 혈소판 수(PLT), 총단백(TP)의 4대 핵심 인자가 청력 회복을 결정하는 가장 중요한 임상 바이오마커임을 규명했습니다.</dd></div><div><dt>임상적 의의</dt><dd>기체혈어형 돌발성 난청 환자 227명의 치료 전 혈액검사 등으로, 침구·한약 통합 치료 뒤 청력이 회복될지 예측하는 AI를 만들었습니다. 회복에 가장 영향이 컸던 것은 APTT(혈액 응고 검사), 발병 후 경과 기간, 혈소판 수, 총단백이었고, 발병 10일 이내가 중요한 치료 시점으로 나타났습니다. 진료 첫날 치료 반응을 가늠하는 참고 자료가 될 수 있습니다. 다만 예측 성능은 중간 수준(AUC 0.718)이고 다른 병원에서의 검증은 아직 없습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42305975/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42305975</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>침구 임상·부인과 대사 AI</h3>
+    <p class="en">Efficacy prediction of acupuncture and moxibustion combined with conventional treatment for PCOS-IR based on real-world data: machine learning and interpretability analysis</p>
+    <p class="src">Zhongguo Zhen Jiu (2026.05; 46(5):669-677)</p>
+    <div class="result"><span class="label">주요 성과</span><p>5가지 머신러닝 모델 중 Random Forest 모델이 정확도, 정밀도, F1 점수, AUC 전반에서 가장 균형 잡힌 최적의 예측 성능을 보였습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>로지스틱 회귀와 Random Forest 알고리즘을 결합해 5대 핵심 임상 지표(공복 인슐린 FINS, 총콜레스테롤, 월경 주기 최장기간, 체질량지수 BMI, 간수치 ALT)를 선별했습니다. 5가지 머신러닝 모델 중 Random Forest 모델이 정확도, 정밀도, F1 점수, AUC 전반에서 가장 균형 잡힌 최적의 예측 성능을 보였습니다. SHAP 분석 결과, 인슐린 분비 수준을 나타내는 공복 인슐린(FINS) 수치가 침구 치료 반응을 결정짓는 가장 강력한 기여 요인으로 밝혀졌습니다.</dd></div><div><dt>임상적 의의</dt><dd>다낭성난소증후군(인슐린저항성 동반) 환자 416명의 진료 기록으로, 침구 치료에 반응할 가능성이 높은 환자를 미리 가려내는 AI를 만들었습니다. 공복 인슐린 수치가 반응을 가장 크게 좌우했고, 총콜레스테롤, 월경 주기, 체질량지수, 간수치(ALT)도 쓰였습니다. 치료 전 검사로 침구가 더 잘 맞을 환자를 가늠하는 참고 자료가 될 수 있습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42116768/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42116768</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>맥파(PPG) 딥러닝</h3>
+    <p class="en">WaveMamba-Net: Dual-frequency adaptive wavelet state-space network for real-time pulse signal classification in wearable health monitoring</p>
+    <p class="src">iScience (2026.05; 29(6):116045)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 직접 연구 아님</p>
+    <div class="result"><span class="label">주요 성과</span><p>맥박 주기 사이의 거시적 리듬과 주기 내부의 미세 파형 굴곡을 동시에 포착하여, 부정맥 분류 <mark>91.84%</mark> 정확도(Macro-<mark>F1 87.52%</mark>) 및 자율신경 스트레스 감별 88.2…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>맥파 신호의 주파수 성분을 쪼개어 분석하는 이산 웨이블릿 변환(DWT)과 최신 인공지능 아키텍처인 Mamba 상태공간(State-Space) 모델을 결합했습니다(WaveMamba-Net). 맥박 주기 사이의 거시적 리듬과 주기 내부의 미세 파형 굴곡을 동시에 포착하여, 부정맥 분류 91.84% 정확도(Macro-F1 87.52%) 및 자율신경 스트레스 감별 88.26% 정확도를 기록했습니다. 초경량 구조로 설계되어 한의 전자의무기록(EMR) 및 모바일 맥진 장비에 즉각 탑재 가능합니다.</dd></div><div><dt>임상적 의의</dt><dd>한의 맥진(요골동맥 맥진)을 다룬 연구는 아닙니다. 중환자 데이터와 일상 측정 데이터의 광전용적맥파(PPG) 신호로 부정맥과 스트레스 상태를 12밀리초 만에 분류하는 딥러닝으로, 웨어러블 맥파 분석 기술을 참고하는 용도입니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42231961/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42231961</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>한의 부인과·임신유지 AI</h3>
+    <p class="en">Predicting of early miscarriage based on machine learning: a retrospective cohort study in China</p>
+    <p class="src">BMC Pregnancy and Childbirth (2026.08; 26(1):1091)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 치료 연구 아님</p>
+    <div class="result"><span class="label">주요 성과</span><p>단일 시점의 수치 대신, 임신 주차별 β-hCG, 프로게스테론, 에스트라디올의 동적 분비 패턴(프로게스테론의 7주 차 반등 궤적 등)을 머신러닝에 학습시켰습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>단일 시점의 수치 대신, 임신 주차별 β-hCG, 프로게스테론, 에스트라디올의 동적 분비 패턴(프로게스테론의 7주 차 반등 궤적 등)을 머신러닝에 학습시켰습니다. 1,918건의 실제 유산 사례와 16,008건의 정상 출생 데이터를 비교 분석하여 최적의 예측 역치를 도출했으며, 복합 호르몬 궤적 머신러닝 모델을 통해 임신 초기 유산 위험군을 오차 없이 정밀 계층화하는 성능을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>임신 초기 호르몬(β-hCG, 프로게스테론, 에스트라디올)과 산모 나이로 조기 유산 위험을 가늠하는 AI입니다. 약 1만 8천 명(유산 1,918건)을 분석했고, 임신 4주 시점의 예측 성능은 AUC 0.81이었습니다. 한의 치료를 직접 다룬 연구는 아니며, 임신 초기 상담 때 참고할 수 있는 자료입니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42823675/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42823675</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
