@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.11">
+<meta property="og:description" content="오늘의 대표논문 · 손가락 산소측정기 수치 4가지로 수면무호흡 가려내는 AI (외 3편)">
+<meta property="og:image" content="https://ezhani00.github.io/ksaikm-briefing/archive/img/2026-11-11.png">
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.11</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>손가락 산소측정기 수치 4가지로 수면무호흡 가려내는 AI</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">04 · 수면무호흡 선별 AI</div>
+    <p class="en">Machine Learning-Based Multidimensional Oximetry for Obstructive Sleep Apnea Screening: Development and External Validation</p>
+    <p class="src">JMIR Medical Informatics (2026.05; 14:e80384)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>수면무호흡 선별 대상 4,156명 중 수면다원검사를 받은 2,195명(내부)과 가정용 검사를 받은 446명(외부)으로, 산소포화도 측정기에서 얻는 8가지 지표를 이용한 머신러닝 6종을 비교했습니다. ODI·저산소 부담·최저 SpO2·ST90 네 가지를 합친 CatBoost 모델이 F점수 0.9516, AUC 0.9879로 가장 좋았고, 외부 검증에서도 유지됐습니다. 여성·젊은 층은 평균 SpO2를 넣은 조합이 더 나았습니다. 한의 치료 연구는 아니며, 맥파가 아니라 산소포화도 신호를 쓴 선별 연구입니다.</p></div>
+    <img src="https://ezhani00.github.io/ksaikm-briefing/archive/img/2026-11-11.png" alt="대표논문 카드" style="width:100%;border-radius:14px">
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42102385/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>안과 합병증 AI</h3>
+    <p class="en">Machine learning models for risk prediction of diabetic retinopathy in Fujian eye study</p>
+    <p class="src">Frontiers in Endocrinology (2026.08; 17:1834380)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 직접 연구 아님 (PPG = 맥압차)</p>
+    <div class="result"><span class="label">주요 성과</span><p>SVC <mark>F1 92.83%</mark>, <mark>AUC 0.99</mark> (정확도 아님, 단면 연구)</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>변수 51개 전처리 후 로지스틱·KNN·SVC·결정나무·랜덤포레스트 5종을 교차검증과 격자탐색으로 비교하고 SHAP으로 주요 인자를 확인했습니다.</dd></div><div><dt>임상적 의의</dt><dd>중국 푸젠성 안과 인구조사 참가자 8,211명의 자료(변수 51개)로 당뇨망막병증 위험을 예측하는 머신러닝 5종을 비교했습니다. 서포트벡터(SVC)가 F1 92.83%, AUC 0.99로 가장 좋았고, 당뇨 병력·나이·맥압차·왼쪽 근거리 시력·키가 주요 예측 인자였습니다. 여기서 &#x27;PPG&#x27;는 맥압차(수축기-이완기 혈압 차이)이지 한의 맥진이나 광전용적맥파가 아닙니다. 한 시점 단면 연구라 선별 참고 자료입니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42625589/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42625589</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>입원기간 예측 AI</h3>
+    <p class="en">Machine learning-based prediction of prolonged length of stay in older patients with type 2 diabetes mellitus and cardiovascular disease</p>
+    <p class="src">Frontiers in Cardiovascular Medicine (2026.08; 13:1903579)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 직접 연구 아님</p>
+    <div class="result"><span class="label">주요 성과</span><p>XGBoost 내부 <mark>AUC 0.753</mark>, 시간 기준 외부 <mark>AUC 0.728</mark> (과적합 경향)</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO로 변수를 고르고 머신러닝 8종을 비교해 XGBoost를 선택했으며, ROC·보정곡선·의사결정곡선과 SHAP으로 평가했습니다.</dd></div><div><dt>임상적 의의</dt><dd>중국 충칭 한 병원의 65세 이상 제2형 당뇨+심혈관질환 입원 환자 27,629명으로 입원 기간이 길어질 위험(상위 25%)을 예측했습니다. XGBoost가 내부 검증 AUC 0.753, 시간 기준 외부 검증 AUC 0.728이었고, 뇌경색·백혈구 수치·빈혈·맥박·당화혈색소/HDL 비율·골다공증이 주요 인자였습니다. 단순한 로지스틱 회귀와 성능 차이가 크지 않고 과적합 경향이 있어 추가 검증이 필요합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42621041/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42621041</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>EGPA 군집 분류 AI</h3>
+    <p class="en">Identification of clinical-biological endophenotypes in patients with eosinophilic granulomatosis with polyangiitis using unsupervised machine learning: a real-world study</p>
+    <p class="src">Respiratory Research (2026.08; 27(1):371)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 직접 연구 아님 (공저자 소속에 중의병원 포함)</p>
+    <div class="result"><span class="label">주요 성과</span><p>3개 유형 도출, 온라인 도구 정확도 <mark>90.0%</mark>, Kappa 0.850</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>14개 핵심 특징에 합의 군집화와 K-means를 적용하고 주성분 분석으로 시각화했으며, 군집 결과로 온라인 예측 도구를 만들어 독립 코호트에서 검증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>호산구성 육아종증 다발혈관염(EGPA) 환자 205명(중일우호병원, 2015-2023)의 임상·검사 자료를 비지도 학습으로 묶어 3가지 유형(호산구-기도염증형, ANCA-전신혈관염형, 호산구 적은 다장기손상형)을 찾았습니다. 메폴리주맙을 쓴 호산구-기도염증형은 부분 관해율이 89.7%였고, 유형을 가려 주는 온라인 도구는 검증에서 정확도 90.0%였습니다. 서양의학 연구이며 공저자 소속에 북경중의약대·망경병원이 포함됩니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42806340/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42806340</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>수면무호흡 선별 AI</h3>
+    <p class="en">Machine Learning-Based Multidimensional Oximetry for Obstructive Sleep Apnea Screening: Development and External Validation</p>
+    <p class="src">JMIR Medical Informatics (2026.05; 14:e80384)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 직접 연구 아님 (공저자 소속에 중의병원 포함)</p>
+    <div class="result"><span class="label">주요 성과</span><p>CatBoost 4지표 모델 F점수 0.9516, <mark>AUC 0.9879</mark> (외부 검증 유지)</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>SpO2 파생 지표 8가지로 머신러닝 6종을 학습해 F점수를 주 지표로 비교했고, CatBoost가 가장 좋았습니다. SHAP으로 ODI·HB·MinSpO2의 기여를 확인하고 성별·연령 하위집단과 외부 코호트에서 검증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>수면무호흡 선별 대상 4,156명 중 수면다원검사를 받은 2,195명(내부)과 가정용 검사를 받은 446명(외부)으로, 산소포화도 측정기에서 얻는 8가지 지표를 이용한 머신러닝 6종을 비교했습니다. ODI·저산소 부담·최저 SpO2·ST90 네 가지를 합친 CatBoost 모델이 F점수 0.9516, AUC 0.9879로 가장 좋았고, 외부 검증에서도 유지됐습니다. 여성·젊은 층은 평균 SpO2를 넣은 조합이 더 나았습니다. 한의 치료 연구는 아니며, 맥파가 아니라 산소포화도 신호를 쓴 선별 연구입니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42102385/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42102385</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
