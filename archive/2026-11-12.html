@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.12">
+<meta property="og:description" content="오늘의 대표논문 · 침구 임상·소화기질환 AI (외 3편)">
+
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.12</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>침구 임상·소화기질환 AI</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">04 · 침구 임상·소화기질환 AI</div>
+    <p class="en">Multimodal biomarkers and prediction models for stricturing and penetrating progression in Crohn&#x27;s disease</p>
+    <p class="src">Frontiers in Medicine (2026.09; 13:1958753)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>만성 염증성 장질환(IBD)인 크론병 환자 중 일부는 장벽이 딱딱하게 굳어 막히는 장 협착(B2형)이나 장에 구멍이 뚫리는 천공·누공(B3형)으로 악화되어 응급 수술을 받게 됩니다. 한의학에서는 침구 치료와 비위(脾胃) 한약 치료를 통해 장내 염증을 완화하고 섬유화를 막는 보존적 치료에 강점이 있으나, 어떤 환자가 외과적 수술이 필요한 치명적 단계로 진행할지 예측하기 어려웠습니다. 본 연구는 상하이중의약대학교 제7인민병원 침구과 연구진이 주도하여, 환자의 혈액·대변 단백체, 탄성초음파, 영상 라디오믹스 지표를 머신러닝으로 융합해 중증 합병증 진행 위험을 조기에 선별하는 다중모달 예후 예측 체계를 정립했습니다. 한의 침구 치료의 조기 집중 투여 대상 환자를 가려내는 결정적 가이드라인을 제공합니다.</p></div>
+    
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42877016/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>한의 심혈관·불확실성 AI</h3>
+    <p class="en">Integrating conformal prediction with machine learning for uncertainty-aware risk stratification in coronary artery disease</p>
+    <p class="src">Frontiers in Cardiovascular Medicine (2026.09; 13:1857390)</p>
+    <div class="result"><span class="label">주요 성과</span><p>모델의 판별력(<mark>AUC 0.951</mark>)을 극대화하는 동시에, 환자를 &#x27;고위험-고확신&#x27;, &#x27;저위험-고확신&#x27;, &#x27;불확실 군&#x27; 등 4가지 2차원 의사결정 영역으로 자동 분류했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>Random Forest 머신러닝 알고리즘에 수학적 신뢰도 보증 기법인 적합예측(Conformal Prediction, CP)을 결합했습니다(RF-MSCP 모델). 모델의 판별력(AUC 0.951)을 극대화하는 동시에, 환자를 &#x27;고위험-고확신&#x27;, &#x27;저위험-고확신&#x27;, &#x27;불확실 군&#x27; 등 4가지 2차원 의사결정 영역으로 자동 분류했습니다. 기존 단일 모델이 놓치기 쉬웠던 경계선상 잠재 고위험 환자를 통계적 오차 한계 내에서 완벽히 포착해 냄을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>한의원 외래에 흉통, 흉민(가슴 답답함)을 호소하는 관상동맥질환 의심 환자 중에는 검사 수치가 정상과 이상 경계선에 걸쳐 있어 위험도를 단정하기 어려운 환자들이 많습니다. 기존 인공지능 모델은 단일 확률값만 제시하여 이런 애매한 경계선 환자를 과소평가하거나 오진할 위험이 있었습니다. 본 연구는 랴오닝중의약대학교 심장내과 연구진 주도로 297명의 실제 임상 코호트를 분석하여, 모델이 &#x27;얼마나 확신을 가지고 진단하는지&#x27;를 통계적으로 보증해 주는 불확실성 인식 AI(적합예측 기법)를 개발했습니다. 한의사가 환자의 진단 불확실성을 고려해 안전하고 정밀한 한약·침구 치료 및 정밀 검사 의뢰 여부를 결정하는 데 결정적인 도움을 줍니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42755764/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42755764</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>사진 맥진·혈관역학 AI</h3>
+    <p class="en">Assessment of Spatially-Varying Arterial Wall Stiffness and Pressure Using a Physics-Informed Neural Network and Pulse Wave Imaging: An in Silico and Experimental Phantom Study of Stenotic Vessels</p>
+    <p class="src">Ultrasound in Medicine &amp; Biology (2026.01; 52(1):175-189)</p>
+    <div class="result"><span class="label">주요 성과</span><p>단순 영상 변위만 보던 기존 방식에 혈류 속도 벡터 데이터를 결합함으로써 복원 정확도를 <mark>13.84%</mark> 향상시켰으며, 복잡한 혈관 경계 조건에서도 경화반 플라크의 위치와 국소 탄성률…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>혈액의 흐름과 혈관벽 팽창을 지배하는 1차원 유체 미분방정식을 인공신경망의 손실 함수에 직접 내장한 물리정보신경망(PINN) 아키텍처를 구축했습니다. 단순 영상 변위만 보던 기존 방식에 혈류 속도 벡터 데이터를 결합함으로써 복원 정확도를 13.84% 향상시켰으며, 복잡한 혈관 경계 조건에서도 경화반 플라크의 위치와 국소 탄성률을 강건하게 역산출해 냈습니다.</dd></div><div><dt>임상적 의의</dt><dd>한의 맥진(脈診)은 요골동맥의 박동 파형과 맥파의 전파 속도, 혈관벽의 탄성 저하(현맥 弦脈, 긴맥 緊脈)를 손끝의 감각으로 감지하는 고도의 혈역학적 진찰입니다. 하지만 혈관 내벽에 죽상경화반(플라크)이 생겨 좁아진 국소 부위의 탄성 변화를 물리역학적으로 정밀하게 시각화하는 기술은 부족했습니다. 본 연구는 혈관 내 맥파 전파(Pulse Wave Propagation) 신호와 혈류 속도를 초음파 맥파 이미징(PWI)으로 계측하고 인공지능을 융합하여, 좁아진 혈관의 국소 동맥벽 경직도를 비침습적으로 오차 1.4% 내에서 정밀하게 측정해 냈습니다. 한의 맥진기의 신호 분석 정확도를 비약적으로 끌어올리는 물리역학적 원천 기술을 제공합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41093716/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41093716</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>심혈관 혈역학·시계열 AI</h3>
+    <p class="en">Dynamic machine-learning model for early prediction of intraoperative hypotension using 5-minute perioperative time-series data: a multicenter retrospective study</p>
+    <p class="src">Frontiers in Medicine (2026.09; 13:1884174)</p>
+    <div class="result"><span class="label">주요 성과</span><p>정적인 수술 전 지표와 5분 간격의 실시간 혈역학 시계열 궤적을 결합하는 동적 예측 프레임워크를 설계했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>정적인 수술 전 지표와 5분 간격의 실시간 혈역학 시계열 궤적을 결합하는 동적 예측 프레임워크를 설계했습니다. 4가지 대표 머신러닝 알고리즘 모두 내부 검증에서 AUROC 0.842~0.857의 높은 예측력을 보였으며, 248명의 독립된 외부 병원 코호트에서도 우수한 예측 일반화 성능을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>한방병원 중환자실이나 급성기 중풍 병동에 입원한 중증 환자에서 급격한 혈압 강하(평균동맥압 65 mmHg 미만)는 뇌혈류와 신장 혈류를 급격히 차단하여 뇌경색 재발, 급성 신부전, 사망을 초래합니다. 기존 관리는 혈압이 이미 떨어진 뒤에야 대처하는 사후 반응적 한계가 있었습니다. 본 연구는 950명의 다기관 환자 코호트에서 5분 단위로 수집되는 동맥 맥파 및 혈역학 시계열 데이터를 분석하여, 급성 저혈압 발생을 5분 전에 미리 경고하는 동적 인공지능 모델을 개발했습니다. 한의 중환자 치료실에서 허혈성 순환 쇼크를 선제적으로 차단하는 집중 모니터링 환경을 지원합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42876673/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42876673</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>침구 임상·소화기질환 AI</h3>
+    <p class="en">Multimodal biomarkers and prediction models for stricturing and penetrating progression in Crohn&#x27;s disease</p>
+    <p class="src">Frontiers in Medicine (2026.09; 13:1958753)</p>
+    <div class="result"><span class="label">주요 성과</span><p>유전체 다유전자 점수, 혈장 및 대변 단백질체, 장 조직 전사체, 전단파 탄성초음파의 조직 경직도 수치, 장 영상 라디오믹스 특징을 통합하는 다중모달 머신러닝 파이프라인을 구축했…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>유전체 다유전자 점수, 혈장 및 대변 단백질체, 장 조직 전사체, 전단파 탄성초음파의 조직 경직도 수치, 장 영상 라디오믹스 특징을 통합하는 다중모달 머신러닝 파이프라인을 구축했습니다. 장 섬유화 협착 기전과 염증성 천공 기전이 서로 다른 분자 경로를 통해 진행됨을 증명하여, 과잉 약물 치료를 방지하고 환자별 맞춤형 치료 단계를 결정하는 데이터 기반 정밀의학 기준을 제시했습니다.</dd></div><div><dt>임상적 의의</dt><dd>만성 염증성 장질환(IBD)인 크론병 환자 중 일부는 장벽이 딱딱하게 굳어 막히는 장 협착(B2형)이나 장에 구멍이 뚫리는 천공·누공(B3형)으로 악화되어 응급 수술을 받게 됩니다. 한의학에서는 침구 치료와 비위(脾胃) 한약 치료를 통해 장내 염증을 완화하고 섬유화를 막는 보존적 치료에 강점이 있으나, 어떤 환자가 외과적 수술이 필요한 치명적 단계로 진행할지 예측하기 어려웠습니다. 본 연구는 상하이중의약대학교 제7인민병원 침구과 연구진이 주도하여, 환자의 혈액·대변 단백체, 탄성초음파, 영상 라디오믹스 지표를 머신러닝으로 융합해 중증 합병증 진행 위험을 조기에 선별하는 다중모달 예후 예측 체계를 정립했습니다. 한의 침구 치료의 조기 집중 투여 대상 환자를 가려내는 결정적 가이드라인을 제공합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42877016/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42877016</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
