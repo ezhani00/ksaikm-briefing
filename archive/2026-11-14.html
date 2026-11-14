@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.14">
+<meta property="og:description" content="오늘의 대표논문 · 한약 처방·변증 임베딩AI (외 3편)">
+
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.14</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>한약 처방·변증 임베딩AI</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">04 · 한약 처방·변증 임베딩AI</div>
+    <p class="en">Artificial intelligence models Traditional Chinese Medicine principles to integrate with biomedicine</p>
+    <p class="src">Imeta (2026.10; e70185, Online ahead of print)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>26,339건의 실제 한약 처방 임상 기록을 토대로 증상, 변증(辨證), 한약 처방 간의 복합적인 연결 관계를 정량화했습니다. 한의사의 변증-처방 사고 과정과 현대 의생명과학 지표를 하나의 공간에서 연결하여, 한방 진료 현장에서 유사 증례의 후향적 임상 분석과 맞춤형 처방 후보 탐색을 효과적으로 보조합니다.</p></div>
+    
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42908738/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>신경퇴행성질환·침치료 순응도AI</h3>
+    <p class="en">Predictive Model of Acupuncture Adherence in Alzheimer Disease: Secondary Analysis of Randomized Controlled Trials</p>
+    <p class="src">JMIR Aging (2026.01; 9:e82787)</p>
+    <div class="result"><span class="label">주요 성과</span><p>외부 검증 코호트와 <mark>70%</mark>·<mark>90%</mark> 순응도 기준 민감도 분석에서도 일관된 예측 안정성을 입증했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>연령, 인지·기능 점수, 돌봄 환경 등 기본 임상 변수를 후진 단계적 선택법 기반 다변량 로지스틱 회귀로 압축하고 진료실에서 점수표처럼 즉시 계산 가능한 노모그램(Nomogram)을 구축했습니다. 외부 검증 코호트와 70%·90% 순응도 기준 민감도 분석에서도 일관된 예측 안정성을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>광안문병원 2개 무작위대조시험(RCT)에 참여한 50~85세 알츠하이머병 환자 108명(개발군 66명, 외부검증군 42명)을 대상으로 침치료 일정의 80% 이상을 완주할 가능성을 예측한 연구입니다. 첫 달 내원 침치료 횟수가 많을수록 향후 치료 순응도가 3배 이상 높아지는 반면(OR 3.06), 유병기간이 길거나(OR 0.97) 시간제 간병인의 돌봄을 받는 환자(OR 0.19)는 중도 탈락 위험이 높아 한방병원 외래에서 집중 관리 대상을 선별하는 데 바로 활용할 수 있습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41564288/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41564288</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>노인 체질의학·임상 코호트AI</h3>
+    <p class="en">Predicting traditional Chinese medicine constitutions in adults aged ≥ 65 years: A machine learning approach</p>
+    <p class="src">J Integr Med (2026.01; 24(1):98-104)</p>
+    <div class="result"><span class="label">주요 성과</span><p>6가지 대표적인 머신러닝 알고리즘(RF, GBM, XGBoost, AdaBoost, SVM, 로지스틱 회귀)을 동일 코호트에 학습·비교한 결과, 랜덤 포레스트(RF) 모델이 AU…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>6가지 대표적인 머신러닝 알고리즘(RF, GBM, XGBoost, AdaBoost, SVM, 로지스틱 회귀)을 동일 코호트에 학습·비교한 결과, 랜덤 포레스트(RF) 모델이 AUC 0.847의 우수한 판별 성능을 기록하여 고위험 편향 체질군을 객관적으로 분류해냈습니다.</dd></div><div><dt>임상적 의의</dt><dd>상하이 지역 65세 이상 고령자 4,403명(편향 체질 29.2%)의 대규모 건강검진 코호트를 바탕으로, 별도의 긴 설문 없이도 일상적인 신체·혈액 검사 수치만으로 한의학적 편향 체질 여부를 판별할 수 있도록 설계된 연구입니다. 연령, 심박수, 단핵구, 간기능(ALT), 혈소판분포폭, 총빌리루빈, 크레아티닌 수치가 핵심 판별 지표로 확인되어 고령 환자의 예방적 체질 관리에 유용합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41242888/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41242888</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>뇌졸중 회복기·합병증 예방AI</h3>
+    <p class="en">[Development and Validation of a Nomogram Prediction Model for Pulmonary Infection in Cerebral Infarction Patients During the Recovery Phase After Acupuncture Treatment]</p>
+    <p class="src">Sichuan Da Xue Xue Bao Yi Xue Ban (2026.07; 57(4):1145-1152)</p>
+    <div class="result"><span class="label">주요 성과</span><p>모델링군 <mark>AUC 0.916</mark>, 독립 검증군 <mark>AUC 0.923</mark>의 높은 정확도와 우수한 임상 순편익(DCA)을 확인했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO 회귀로 다수의 임상·혈액·침구 시술 변수 중 핵심 위험 인자 9개를 정밀 추출한 뒤 다변량 로지스틱 회귀 노모그램을 구축했습니다. 모델링군 AUC 0.916, 독립 검증군 AUC 0.923의 높은 정확도와 우수한 임상 순편익(DCA)을 확인했습니다.</dd></div><div><dt>임상적 의의</dt><dd>뇌경색 회복기에 침치료를 받은 입원·외래 환자 500명(모델링 350명, 검증 150명; 폐렴 발생률 26.20%)을 분석해 폐렴 합병증 위험을 사전에 예측합니다. 특히 발병 후 3일을 초과해 침치료를 늦게 시작하거나(OR 2.660), 총 치료 기간이 14일 미만이거나(OR 2.463), 유침 시간이 30분인 경우(OR 2.439) 등이 연하장애(EAT-10)·뇌졸중 중증도(NIHSS)와 함께 위험 인자로 도출되어 한방 재활 현장에서 안전한 침구 프로토콜을 조정하는 근거가 됩니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42688615/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42688615</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>한약 처방·변증 임베딩AI</h3>
+    <p class="en">Artificial intelligence models Traditional Chinese Medicine principles to integrate with biomedicine</p>
+    <p class="src">Imeta (2026.10; e70185, Online ahead of print)</p>
+    <div class="result"><span class="label">주요 성과</span><p>한의학(KM)의 &#x27;증상을 변증으로 압축하고 변증을 처방으로 확장하는&#x27; 논리를 모사한 오토인코더(Autoencoder) 신경망을 학습시켜 고유의 임베딩 공간(TCM-ES)을 생성했…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>한의학(KM)의 &#x27;증상을 변증으로 압축하고 변증을 처방으로 확장하는&#x27; 논리를 모사한 오토인코더(Autoencoder) 신경망을 학습시켜 고유의 임베딩 공간(TCM-ES)을 생성했습니다. 학습에 직접 투입하지 않은 한의학 원리 및 현대 의생명과학 개체들과 사후 매핑에서도 일관된 정렬 성능을 보였습니다.</dd></div><div><dt>임상적 의의</dt><dd>26,339건의 실제 한약 처방 임상 기록을 토대로 증상, 변증(辨證), 한약 처방 간의 복합적인 연결 관계를 정량화했습니다. 한의사의 변증-처방 사고 과정과 현대 의생명과학 지표를 하나의 공간에서 연결하여, 한방 진료 현장에서 유사 증례의 후향적 임상 분석과 맞춤형 처방 후보 탐색을 효과적으로 보조합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42908738/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42908738</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
