@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.15">
+<meta property="og:description" content="오늘의 대표논문 · 근골격계·의료영상 딥러닝AI (외 3편)">
+
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.15</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>근골격계·의료영상 딥러닝AI</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">03 · 근골격계·의료영상 딥러닝AI</div>
+    <p class="en">Multistage CBAM-enhanced deep learning for three-class classification of radiographically derived bone mass status labels on knee radiographs</p>
+    <p class="src">Front Med (Lausanne) (2026.10; 13:1960438)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>후베이중의약대 침구골상학원 및 셴닝시중의병원 골상과 연구진이 개발한 모델로, 무릎 통증으로 한방병원·한의원에 내원해 촬영한 일반 슬관절 X-ray 영상만으로 별도의 골밀도 검사(DXA) 없이 정상·골감소증·골다공증 3단계를 자동 선별합니다. 추나·침구 치료 전 고령 환자의 골다공증성 골절 위험을 사전에 파악하는 데 유용합니다.</p></div>
+    
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42959282/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>사진(四診)·류마티스AI</h3>
+    <p class="en">Construction of a nomogram for anxiety and depression in patients with Sjögren&#x27;s syndrome by combining tongue and pulse characteristics: a cross-sectional study based on a prospective cohort</p>
+    <p class="src">J Tradit Chin Med (2026.08; 46(4):972-981)</p>
+    <div class="result"><span class="label">주요 성과</span><p>모델의 판별력(AUC), 보정 곡선, 결정 곡선 분석(DCA)을 통해 임상적 유용성을 검증했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>단변량 및 다변량 로지스틱 회귀 분석으로 설진·맥진 변수와 임상 지표 중 핵심 예측 인자를 선별한 뒤, 진료실에서 직관적으로 위험 점수를 합산할 수 있는 노모그램(Nomogram)을 구축했습니다. 모델의 판별력(AUC), 보정 곡선, 결정 곡선 분석(DCA)을 통해 임상적 유용성을 검증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>중국 30개 주요 3차 병원 전향적 코호트에서 모집한 쇼그렌증후군 환자 444명(여성 95.5%, 평균 연령 46±13세)을 대상으로 불안(유병률 45.5%) 및 우울(42.1%) 동반 위험을 예측한 연구입니다. 한방 류마티스 외래에서 일상적으로 시행하는 설진·맥진 소견과 기본 임상·혈액 검사 결과를 결합하여, 만성 자가면역질환 환자의 정신건강 합병증을 조기에 선별할 수 있는 실용적 근거를 제공합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42639781/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42639781</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>체질의학·다중 모델 융합AI</h3>
+    <p class="en">Research on intelligent identification of Traditional Chinese Medicine constitutions based on multi-model fusion</p>
+    <p class="src">J Tradit Chin Med (2026.02; 46(1):226-235)</p>
+    <div class="result"><span class="label">주요 성과</span><p>이를 통해 주요 편향 체질 전반에서 안정적인 정확도, 정밀도, 재현율 및 F1 점수를 달성했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>단일 알고리즘의 편향을 보완하기 위해 서포트 벡터 머신(SVM)과 신경망 등 여러 머신러닝 분류기를 결합한 투표 분류기(Voting Classifier) 기반 다중 모델 융합 전략을 적용했습니다. 이를 통해 주요 편향 체질 전반에서 안정적인 정확도, 정밀도, 재현율 및 F1 점수를 달성했습니다.</dd></div><div><dt>임상적 의의</dt><dd>기존 한의 체질 설문의 번거로움을 줄이기 위해 축약형 신체정보 수집 서식을 설계하고, 이를 바탕으로 환자의 체질을 자동 분류한 연구입니다. 특히 임상에서 빈번하게 접하는 양허(陽虛), 기허(氣虛), 기울(氣鬱) 체질에서 높은 판별 신뢰도를 확보하여 한방 의료기관의 문진 효율화와 표준화된 체질 진단 보조에 실질적으로 기여합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41736439/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41736439</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>근골격계·의료영상 딥러닝AI</h3>
+    <p class="en">Multistage CBAM-enhanced deep learning for three-class classification of radiographically derived bone mass status labels on knee radiographs</p>
+    <p class="src">Front Med (Lausanne) (2026.10; 13:1960438)</p>
+    <div class="result"><span class="label">주요 성과</span><p>독립 테스트셋에서 <mark>90.77%</mark>(177/195)의 정확도를 기록해 기존 VGG19·ResNet50·EfficientNet-B0·DenseNet121 모델을 모두 앞섰습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>영상 내 미세한 골소주 및 피질골 변화에 집중할 수 있도록 다단계 합성곱 블록 어텐션 모듈(Multistage CBAM)을 탑재한 딥러닝 모델을 구축하고, Grad-CAM으로 AI가 판독한 핵심 해부학적 부위를 시각화했습니다. 독립 테스트셋에서 90.77%(177/195)의 정확도를 기록해 기존 VGG19·ResNet50·EfficientNet-B0·DenseNet121 모델을 모두 앞섰습니다.</dd></div><div><dt>임상적 의의</dt><dd>후베이중의약대 침구골상학원 및 셴닝시중의병원 골상과 연구진이 개발한 모델로, 무릎 통증으로 한방병원·한의원에 내원해 촬영한 일반 슬관절 X-ray 영상만으로 별도의 골밀도 검사(DXA) 없이 정상·골감소증·골다공증 3단계를 자동 선별합니다. 추나·침구 치료 전 고령 환자의 골다공증성 골절 위험을 사전에 파악하는 데 유용합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42959282/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42959282</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>심혈관·해석 가능한 AI</h3>
+    <p class="en">Interpretable machine learning for coronary heart disease risk stratification in patients with carotid atherosclerosis: A retrospective cross-sectional study</p>
+    <p class="src">Medicine (Baltimore) (2026.01; 105(3):e47203)</p>
+    <div class="result"><span class="label">주요 성과</span><p>10겹 교차 검증을 통해 다양한 머신러닝 모델을 비교한 결과, 로지스틱 회귀(LR) 기반 모델이 테스트셋 <mark>AUC 0.838</mark>로 가장 균형 잡힌 민감도와 특이도를 보였습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>10겹 교차 검증을 통해 다양한 머신러닝 모델을 비교한 결과, 로지스틱 회귀(LR) 기반 모델이 테스트셋 AUC 0.838로 가장 균형 잡힌 민감도와 특이도를 보였습니다. SHAP(SHapley Additive exPlanations) 해석 기법을 통해 경동맥 경화반, TIA, 연령, 당뇨, 고지혈증이 위험 예측의 핵심 기여 인자임을 투명하게 제시했습니다.</dd></div><div><dt>임상적 의의</dt><dd>허난중의약대 제1부속병원 국가중의심혈관진료센터에서 경동맥 죽상경화증 환자의 관상동맥질환(CHD) 동반 위험을 정밀 층화한 후향적 임상 연구입니다. 한방 심혈관 진료실에서 경동맥 경화반(Plaque)이나 일과성허혈발작(TIA) 병력이 있는 고령·대사질환 환자를 대상으로 심장 합병증 조기 스크리닝 및 한양방 협진 의뢰 기준을 세우는 데 활용 가치가 높습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41560093/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41560093</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
