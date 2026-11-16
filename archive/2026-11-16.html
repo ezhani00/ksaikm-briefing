@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.16">
-<meta property="og:description" content="오늘의 대표논문 · 허난중의약대 부속병원에서 뇌졸중 후 경도인지장애(PSCI-MCI) 입원 환자 750명(훈련 526명, 검증 224명)을 대상으로 1개월간 두침 총자·유침 치료(SCNT-PR)를 시행한 뒤 인지 기능 호전 여부를 사… (외 3편)">
-
+<meta property="og:description" content="오늘의 대표논문 · 뇌졸중후 경도인지장애 환자의 두침 치료후 인지 호전도 예측 AI(LightGBM) (외 3편)">
+<meta property="og:image" content="https://ezhani00.github.io/ksaikm-briefing/archive/img/2026-11-16.png">
 <meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
 <title>KSAIKM 일일 학술 브리핑</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -101,13 +101,13 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
 </div></header>
 
 <section class="section"><div class="inner">
-  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>허난중의약대 부속병원에서 뇌졸중 후 경도인지장애(PSCI-MCI) 입원 환자 750명(훈련 526명, 검증 224명)을 대상으로 1개월간 두침 총자·유침 치료(SCNT-PR)를 시행한 뒤 인지 기능 호전 여부를 사…</h2></div>
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>뇌졸중후 경도인지장애 환자의 두침 치료후 인지 호전도 예측 AI(LightGBM)</h2></div>
   <article class="card" style="border-color:var(--accent);border-width:2px">
-    <div class="num">02 · 신경계·두침 예후 예측AI</div>
+    <div class="num">02 · 두침 치료 반응 예측 AI</div>
     <p class="en">A machine learning model for predicting cognitive improvement after scalp cluster needling therapy in patients with post-stroke mild cognitive impairment</p>
     <p class="src">Front Neurol (2026.10; 17:1884682)</p>
-    <div class="result"><span class="label">쉬운 요약</span><p>허난중의약대 부속병원에서 뇌졸중 후 경도인지장애(PSCI-MCI) 입원 환자 750명(훈련 526명, 검증 224명)을 대상으로 1개월간 두침 총자·유침 치료(SCNT-PR)를 시행한 뒤 인지 기능 호전 여부를 사전에 예측한 대규모 임상 연구입니다. 치료 전 기저 MoCA 점수, 교육연수, 뇌졸중 중증도(NIHSS), 바델 지수, 연령, 전두엽 병변 유무, 당뇨 여부가 호전 핵심 인자로 규명되어 한방 재활 입원 시 집중 치료 반응군을 선별하는 데 유용합니다.</p></div>
-    
+    <div class="result"><span class="label">쉬운 요약</span><p>뇌졸중 후 경도인지장애 입원 환자 750명(훈련 526, 검증 224)이 두침 총자·유침 치료를 1개월 받은 뒤 인지가 좋아질지를 치료 전 자료로 미리 예측하는 연구입니다. 인지 호전은 MoCA 점수 2점 이상 상승으로 정의했고, LightGBM의 AUC는 0.759였습니다. 기저 MoCA 점수·교육연수·NIHSS·바델 지수·나이·전두엽 병변·당뇨가 주요 기여 인자였습니다. 후향 연구이고 내부 검증만 했으며 저자들도 외부 검증이 필요하다고 밝혔습니다.</p></div>
+    <img src="https://ezhani00.github.io/ksaikm-briefing/archive/img/2026-11-16.png" alt="대표논문 카드" style="width:100%;border-radius:14px">
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42920443/" target="_blank" rel="noopener">PubMed 원문</a></div>
   </article>
 </div></section>
@@ -117,38 +117,38 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
 
   <article class="card">
     <div class="num">01</div>
-    <h3>사진(四診)·대사간질환AI</h3>
+    <h3>설진 지방간 진단 AI</h3>
     <p class="en">Tongue Image Analysis and Clinical Data Fusion: A Novel Approach for Non-invasive Diagnosis of Metabolic Dysfunction-associated Fatty Liver Disease</p>
     <p class="src">J Clin Transl Hepatol (2026.04; 14(4):416-429)</p>
-    <div class="result"><span class="label">주요 성과</span><p>독립 테스트셋(n=48)에서 정확도 <mark>97.92%</mark>, 민감도 <mark>96.88%</mark>, 특이도 <mark>100%</mark>, 가중 카파(QWK) 0.9538을 달성해 단일 모달 및 혈청학적 모델보다 우수한 성능을 …</p></div>
-    <dl><div><dt>핵심 모델</dt><dd>설진 영상을 처리하는 딥러닝(ConvNeXt-Tiny)과 임상 혈액 지표를 처리하는 다층 퍼셉트론(MLP)을 이중 스트림으로 구성한 뒤 동적 아핀 특징 변환 모듈로 정교하게 융합했습니다. 독립 테스트셋(n=48)에서 정확도 97.92%, 민감도 96.88%, 특이도 100%, 가중 카파(QWK) 0.9538을 달성해 단일 모달 및 혈청학적 모델보다 우수한 성능을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>후베이성중의병원과 광안문병원 연구진이 참여해 정상군 157명과 대사이상 지방간(MAFLD) 환자 320명 등 총 477명의 표준화 설진 영상(CIE L*a*b* 색공간)과 임상 대사 지표를 결합한 연구입니다. 간 섬유화가 진행될수록 혀의 황색도(b* 값)가 점진적으로 감소하는 임상적 특징을 포착해, 초음파나 침습적 검사 접근이 제한된 일차 한방 의료기관에서도 저비용·비침습 지방간 선별 도구로 활용할 수 있습니다.</dd></div></dl>
+    <div class="result"><span class="label">주요 성과</span><p>독립 테스트셋(n=48) 정확도 <mark>97.92%</mark>, 민감도 <mark>96.88%</mark>, 특이도 <mark>100%</mark></p></div>
+    <dl><div><dt>핵심 모델</dt><dd>ConvNeXt-Tiny로 설진 영상을, 다층 퍼셉트론으로 임상 지표를 처리하는 이중 스트림 구조를 동적 아핀 특징 변환 모듈로 융합했습니다.</dd></div><div><dt>임상적 의의</dt><dd>혀 사진(설진)과 임상 지표를 합쳐 대사이상 지방간(MAFLD)을 비침습으로 가려내는 딥러닝 연구입니다. 후보 904명 중 477명(정상 157, MAFLD 320)을 분석했고, 간 섬유화가 진행될수록 혀의 황색도(b* 값)가 낮아졌습니다. 독립 테스트셋(n=48)에서 정확도 97.92%, 민감도 96.88%, 특이도 100%였지만 테스트 인원이 48명뿐이고 외부 검증이 없어 선별 아이디어로 참고할 단계입니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42181845/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42181845</span></div>
   </article>
   <article class="card">
     <div class="num">02</div>
-    <h3>신경계·두침 예후 예측AI</h3>
+    <h3>두침 치료 반응 예측 AI</h3>
     <p class="en">A machine learning model for predicting cognitive improvement after scalp cluster needling therapy in patients with post-stroke mild cognitive impairment</p>
     <p class="src">Front Neurol (2026.10; 17:1884682)</p>
-    <div class="result"><span class="label">주요 성과</span><p>LASSO 회귀와 Boruta 알고리즘의 교집합으로 7개 핵심 예측 변수를 추려낸 뒤 LightGBM 모델을 학습시켜 <mark>AUC 0.759</mark>의 판별력을 확보했습니다.</p></div>
-    <dl><div><dt>핵심 모델</dt><dd>LASSO 회귀와 Boruta 알고리즘의 교집합으로 7개 핵심 예측 변수를 추려낸 뒤 LightGBM 모델을 학습시켜 AUC 0.759의 판별력을 확보했습니다. SHAP(SHapley Additive exPlanations) 해석 기법을 통해 각 환자의 인지 개선 확률에 어떤 임상 인자가 얼마나 기여하는지 직관적으로 설명할 수 있도록 구현했습니다.</dd></div><div><dt>임상적 의의</dt><dd>허난중의약대 부속병원에서 뇌졸중 후 경도인지장애(PSCI-MCI) 입원 환자 750명(훈련 526명, 검증 224명)을 대상으로 1개월간 두침 총자·유침 치료(SCNT-PR)를 시행한 뒤 인지 기능 호전 여부를 사전에 예측한 대규모 임상 연구입니다. 치료 전 기저 MoCA 점수, 교육연수, 뇌졸중 중증도(NIHSS), 바델 지수, 연령, 전두엽 병변 유무, 당뇨 여부가 호전 핵심 인자로 규명되어 한방 재활 입원 시 집중 치료 반응군을 선별하는 데 유용합니다.</dd></div></dl>
+    <div class="result"><span class="label">주요 성과</span><p>LightGBM <mark>AUC 0.759</mark> (n=750, 후향·내부 검증)</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO와 Boruta의 교집합으로 변수 7개를 고르고 지도학습 7종을 비교해 LightGBM을 선택했으며 SHAP으로 해석했습니다.</dd></div><div><dt>임상적 의의</dt><dd>뇌졸중 후 경도인지장애 입원 환자 750명(훈련 526, 검증 224)이 두침 총자·유침 치료를 1개월 받은 뒤 인지가 좋아질지를 치료 전 자료로 미리 예측하는 연구입니다. 인지 호전은 MoCA 점수 2점 이상 상승으로 정의했고, LightGBM의 AUC는 0.759였습니다. 기저 MoCA 점수·교육연수·NIHSS·바델 지수·나이·전두엽 병변·당뇨가 주요 기여 인자였습니다. 후향 연구이고 내부 검증만 했으며 저자들도 외부 검증이 필요하다고 밝혔습니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42920443/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42920443</span></div>
   </article>
   <article class="card">
     <div class="num">03</div>
-    <h3>한약 처방·실세계 코호트AI</h3>
+    <h3>황기-단삼 재입원 예측</h3>
     <p class="en">Long-term efficacy of the Astragalus-Salvia miltiorrhiza botanical drug pair in stable coronary artery disease and a nomogram for predicting frequent hospitalization: a real-world retrospective cohort study</p>
     <p class="src">Front Pharmacol (2026.09; 17:1898253)</p>
-    <div class="result"><span class="label">주요 성과</span><p>관찰 데이터의 교란 변수를 정밀 보정하기 위해 성향점수 역확률 가중치(IPTW) 기법을 적용해 두 군의 기저 특성을 균형화했습니다.</p></div>
-    <dl><div><dt>핵심 모델</dt><dd>관찰 데이터의 교란 변수를 정밀 보정하기 위해 성향점수 역확률 가중치(IPTW) 기법을 적용해 두 군의 기저 특성을 균형화했습니다. 또한 연령, 이완기혈압, 유리 삼요오드티로닌(FT3), 혈색소, 뇌졸중 병력 등 5개 핵심 인자를 결합한 예후 노모그램(Nomogram)을 구축해 잦은 재입원 위험도를 정량화했습니다.</dd></div><div><dt>임상적 의의</dt><dd>안정형 관상동맥질환(SCAD) 환자 686명(황기-단삼 2:1 약대 병용 343명 vs 표준치료 단독 343명)을 5년간 추적 관찰한 실세계 코호트 연구입니다. 기허혈어(氣虛血瘀) 변증 환자에게 황기-단삼 약대를 장기 병용했을 때 간·신장 독성 없이 LDL-C·중성지방·심박수가 유의하게 개선되고 HDL-C가 상승함을 확인했으며, 빈번한 재입원(3회 이상) 고위험군을 조기 관리할 수 있는 임상 지표를 제시했습니다.</dd></div></dl>
+    <div class="result"><span class="label">주요 성과</span><p>LDL-C·TG·심박수 감소, HDL-C 증가, 간·신장 영향 없음 (5년, 관찰 연구)</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>성향점수 역확률 가중치(IPTW)로 두 군의 기저 특성을 맞추고, 다변량 로지스틱 회귀로 재입원 노모그램을 만들었습니다.</dd></div><div><dt>임상적 의의</dt><dd>안정형 관상동맥질환 환자 686명(황기-단삼 약대 병용 343, 표준치료 단독 343)을 5년간 비교한 실세계 후향 코호트입니다. 병용군에서 LDL-C·총콜레스테롤·중성지방·심박수가 낮고 HDL-C가 높았으며 간·신장 기능에는 차이가 없었고, 증상 네트워크 분석에서는 가슴 답답함이 핵심 호전 증상이었습니다. 뇌졸중 병력·나이·이완기 혈압·FT3·헤모글로빈으로 재입원(3회 이상) 위험 노모그램도 만들었습니다. 관찰 연구라 인과는 단정할 수 없고, 메일에 적힌 2:1 비율과 기허혈어 변증은 초록에서 확인되지 않습니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42760947/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42760947</span></div>
   </article>
   <article class="card">
     <div class="num">04</div>
-    <h3>맥진·혈관노화 선별AI</h3>
+    <h3>동맥경직도 선별 AI</h3>
     <p class="en">A machine learning model based on routine blood-derived indices for early arterial stiffness prediction in the community</p>
-    <p class="src">Lipids Health Dis (2026.02; 25(1):99)</p>
-    <div class="result"><span class="label">주요 성과</span><p>이를 통합한 다변량 노모그램과 웹 계산기는 독립 테스트셋에서 <mark>AUC 0.877</mark>의 우수한 예측 정확도를 보였습니다.</p></div>
-    <dl><div><dt>핵심 모델</dt><dd>LASSO 회귀로 교란 변수를 통제한 후 랜덤 포레스트(RF)와 SHAP 분석을 결합해 연령, 수축기·이완기 혈압, TyG-WHtR, 심박수, 공복혈당, 당화혈색소 등 7대 핵심 예측 지표를 선별했습니다. 이를 통합한 다변량 노모그램과 웹 계산기는 독립 테스트셋에서 AUC 0.877의 우수한 예측 정확도를 보였습니다.</dd></div><div><dt>임상적 의의</dt><dd>청두중의약대와 베이징 디지털 지능 한의학 핵심실험실 연구진이 지역사회 성인 2,948명(조기 동맥경직도 baPWV ≥ 1400 cm/s 1,636명)을 분석해 고가의 맥파전달속도 측정 장비 없이도 혈관 노화를 조기 선별할 수 있도록 설계한 연구입니다. 기본 혈압·심박수와 혈당·지질 파생 지표(TyG-WHtR 등)만으로 동맥경직도 고위험군을 신속히 가려내 한의 심혈관 예방 치료로 연계할 수 있습니다.</dd></div></dl>
+    <p class="src">Lipids Health Dis (2026.02; 25(1):99)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 맥진 연구 아님 (baPWV는 혈관 측정 지표)</p>
+    <div class="result"><span class="label">주요 성과</span><p>노모그램 테스트 <mark>AUC 0.877</mark> (n=2,948, 단면 연구)</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO로 교란 변수를 조정하고 랜덤포레스트·SHAP으로 예측 변수를 고른 뒤 로지스틱 회귀 노모그램과 웹 계산기를 만들었습니다.</dd></div><div><dt>임상적 의의</dt><dd>지역사회 성인 2,948명(조기 동맥경직도 baPWV 1400 cm/s 이상 1,636명)에서 일상 혈액·혈압 지표로 혈관 노화 위험을 가려내는 모델입니다. 나이·수축기/이완기 혈압·TyG-WHtR·심박수·공복혈당·당화혈색소 7개로 만든 노모그램의 테스트 AUC가 0.877이었습니다. baPWV는 혈관 측정 지표이지 한의 맥진이 아니며, 단면 연구라 인과는 알 수 없습니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41731571/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41731571</span></div>
   </article>
 </div></main>
