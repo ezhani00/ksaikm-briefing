@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.19">
+<meta property="og:description" content="오늘의 대표논문 · 헤이룽장중의약대 제2부속병원 침구과 연구진이 참여한 임상 연구로, 안검하수나 복시로 내원하는 당뇨병성 동안신경마비 환자의 중증 진행 위험을 조기에 예측합니다. (외 3편)">
+
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.19</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>헤이룽장중의약대 제2부속병원 침구과 연구진이 참여한 임상 연구로, 안검하수나 복시로 내원하는 당뇨병성 동안신경마비 환자의 중증 진행 위험을 조기에 예측합니다.</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">01 · 신경안과·침구 임상AI</div>
+    <p class="en">Construction and validation of a nomogram for predicting the risk of severe diabetic oculomotor nerve palsy</p>
+    <p class="src">J Clin Neurosci (2026.09; 154:112291)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>헤이룽장중의약대 제2부속병원 침구과 연구진이 참여한 임상 연구로, 안검하수나 복시로 내원하는 당뇨병성 동안신경마비 환자의 중증 진행 위험을 조기에 예측합니다. 연령과 당화혈색소(HbA1c)가 독립 위험 인자로, 후대뇌동맥 협착 또는 경화반이 보조 예측 지표로 확인되어, 한방 안이비인후과·침구과 외래에서 초기 집중 침구·전침 치료 및 혈당·혈관 관리 계획을 세우는 데 실질적인 근거를 제공합니다.</p></div>
+    
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42710327/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>신경안과·침구 임상AI</h3>
+    <p class="en">Construction and validation of a nomogram for predicting the risk of severe diabetic oculomotor nerve palsy</p>
+    <p class="src">J Clin Neurosci (2026.09; 154:112291)</p>
+    <div class="result"><span class="label">주요 성과</span><p>모델 판별력 <mark>AUC 0.721</mark>(<mark>95%</mark> CI: 0.645-0.798)과 양호한 보정 곡선 및 결정 곡선 분석(DCA) 순편익을 입증했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO 회귀로 변수를 선별한 뒤 다변량 로지스틱 회귀를 적용해 임상 노모그램을 구축하고 부트스트랩 재표본추출로 내부 검증을 수행했습니다. 모델 판별력 AUC 0.721(95% CI: 0.645-0.798)과 양호한 보정 곡선 및 결정 곡선 분석(DCA) 순편익을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>헤이룽장중의약대 제2부속병원 침구과 연구진이 참여한 임상 연구로, 안검하수나 복시로 내원하는 당뇨병성 동안신경마비 환자의 중증 진행 위험을 조기에 예측합니다. 연령과 당화혈색소(HbA1c)가 독립 위험 인자로, 후대뇌동맥 협착 또는 경화반이 보조 예측 지표로 확인되어, 한방 안이비인후과·침구과 외래에서 초기 집중 침구·전침 치료 및 혈당·혈관 관리 계획을 세우는 데 실질적인 근거를 제공합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42710327/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42710327</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>이비인후·침구추나AI</h3>
+    <p class="en">Development and Validation of a Nomogram to Identify and Predict High-Distress Psychosocial Phenotypes in Tinnitus Patients: A Latent Profile Analysis</p>
+    <p class="src">Psychol Res Behav Manag (2026.06; 19:614795)</p>
+    <div class="result"><span class="label">주요 성과</span><p>훈련 코호트 <mark>AUC 0.756</mark>, 검증 코호트 <mark>AUC 0.737</mark>의 안정적인 판별 성능과 임상적 유용성을 확인했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>비지도 학습 기반 잠재프로파일 분석(LPA)으로 4개의 임상 표현형을 도출한 뒤, 고위험군 예측을 위한 로지스틱 회귀 노모그램을 구축했습니다. 훈련 코호트 AUC 0.756, 검증 코호트 AUC 0.737의 안정적인 판별 성능과 임상적 유용성을 확인했습니다.</dd></div><div><dt>임상적 의의</dt><dd>산시중의약대 침구추나학과 연구진이 참여한 연구로, 주관적 이명 환자들의 심리사회적 이질성을 객관적으로 분류해 이명장애지수(THI)와 불면증 심각도(ISI)가 가장 높은 고위험군(중증 불안 단독 표현형, 28.09%)을 조기에 가려냅니다. 21~39세 연령대, 긴 이명 유병기간, 현훈(어지럼) 동반, 양측성 이명, 역정·초조 성향이 독립 위험 인자로 도출되어 한방 이명·현훈 외래에서 정서·수면 동반 치료가 필요한 환자를 선별하는 데 유용합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42388458/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42388458</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>근골격계·멀티모달 MRIAI</h3>
+    <p class="en">A multimodal deep learning model for classifying early- versus late-stage osteonecrosis of the femoral head on biparametric MRI</p>
+    <p class="src">BMC Musculoskelet Disord (2026.10; 27(1):922)</p>
+    <div class="result"><span class="label">주요 성과</span><p>단일 시퀀스 모델들을 모두 유의하게 상회하며 <mark>AUC 0.944</mark>(<mark>95%</mark> CI: 0.905-0.973), 정확도 <mark>90.9%</mark>, 민감도 <mark>89.0%</mark>, 특이도 <mark>92.9%</mark>의 높은 성능을 달성…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>STIR 및 T1-FSE 이중 파라미터 MRI 영상 특징과 환자의 연령, 성별, 병변 측위, 병인 등 임상 변수를 초기 단계에서 결합하는 조기 융합(Early-fusion) 멀티모달 딥러닝 프레임워크를 구축했습니다. 단일 시퀀스 모델들을 모두 유의하게 상회하며 AUC 0.944(95% CI: 0.905-0.973), 정확도 90.9%, 민감도 89.0%, 특이도 92.9%의 높은 성능을 달성했습니다.</dd></div><div><dt>임상적 의의</dt><dd>광저우중의약대 제3부속병원 정형외과 연구진이 대퇴골두 무혈성괴사(ONFH) 환자 530명(851개 고관절)을 대상으로 한 대규모 연구입니다. 고관절 보존 치료(한약·침구·비수술 요법)가 가능한 조기 병기와 수술적 치료가 필요한 후기 병기를 객관적으로 감별함으로써, 한방 정형·재활 진료 현장에서 환자 맞춤형 치료 방침 결정의 일관성을 크게 높여줍니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42958225/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42958225</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>근골격 영상·다기관 AI</h3>
+    <p class="en">A deep learning model for detection and staging of osteonecrosis of the femoral head on x-ray images: a retrospective, large-scale, multicentre study in China</p>
+    <p class="src">Lancet Digit Health (2026.10; 101081, Online ahead of print)</p>
+    <div class="result"><span class="label">주요 성과</span><p>내부 테스트셋에서 기존 YOLOv8 모델 대비 병기 분류 정확도를 <mark>87.42%</mark>에서 <mark>96.44%</mark>로, AUC를 <mark>88.54%</mark>에서 <mark>96.94%</mark>로 크게 향상시켰습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>객체 탐지 네트워크인 YOLOv8을 기반으로 개선한 OsteoAID 딥러닝 모델을 다기관 X-ray 데이터에 학습시켰습니다. 내부 테스트셋에서 기존 YOLOv8 모델 대비 병기 분류 정확도를 87.42%에서 96.44%로, AUC를 88.54%에서 96.94%로 크게 향상시켰습니다.</dd></div><div><dt>임상적 의의</dt><dd>중국 전역 다기관 후향적 X-ray 데이터셋을 활용해 고가의 MRI 촬영 이전 단계인 일반 전후방 고관절 X-ray 영상만으로 대퇴골두 무혈성괴사의 유무와 진행 병기를 전문의 수준으로 판독합니다. 일차 한방의료기관이나 한방병원 외래에서 고관절 통증 환자의 초기 스크리닝 및 조기 전원 판단에 실질적인 도움을 줍니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42934014/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42934014</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
