@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.20">
+<meta property="og:description" content="오늘의 대표논문 · 청두중의약대 침구추나학원 연구진이 대규모 중노년 코호트(CHARLS 1,964명, 외부검증 CLHLS 6,782명)를 활용해 우울증을 앓는 중노년 환자의 경도인지장애(MCI) 동반 위험을 선별한 연구입니다. (외 3편)">
+
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.20</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span><span>No. <b>222–225</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>청두중의약대 침구추나학원 연구진이 대규모 중노년 코호트(CHARLS 1,964명, 외부검증 CLHLS 6,782명)를 활용해 우울증을 앓는 중노년 환자의 경도인지장애(MCI) 동반 위험을 선별한 연구입니다.</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">04 · 정신신경·침구학AI</div>
+    <p class="en">A machine learning-based discriminative framework for mild cognitive impairment risk in middle-aged and elderly Chinese patients with depression: evidence from CHARLS and CLHLS</p>
+    <p class="src">J Affect Disord (2025.11; 120701, Online ahead of print)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>청두중의약대 침구추나학원 연구진이 대규모 중노년 코호트(CHARLS 1,964명, 외부검증 CLHLS 6,782명)를 활용해 우울증을 앓는 중노년 환자의 경도인지장애(MCI) 동반 위험을 선별한 연구입니다. 한방 신경정신과 및 침구 외래에서 우울감과 인지 저하가 겹치기 쉬운 고령 환자를 조기에 가려내 두침·인지 재활 치료를 선제적으로 개입하는 데 유용합니다.</p></div>
+    
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41237961/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>사진(四診)·임상 NLPAI</h3>
+    <p class="en">A Character-level Convolutional Recurrent Interaction Network for joint traditional Chinese medicine clinical named entity recognition and relation extraction</p>
+    <p class="src">Artif Intell Med (2026.02; 175:103372)</p>
+    <div class="result"><span class="label">주요 성과</span><p>문자 단위 임베딩과 문자 간 문맥 합성곱 특징을 결합한 합성곱-순환 상호작용 신경망(CCRIN)에 셀프 어텐션을 통합했습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>문자 단위 임베딩과 문자 간 문맥 합성곱 특징을 결합한 합성곱-순환 상호작용 신경망(CCRIN)에 셀프 어텐션을 통합했습니다. 사진(四診) 차원을 관계(Relation)로, 해부학적 부위와 증상 속성을 각각 주체·객체 개체로 정의해 동시 추출함으로써 TCM-cases 임상 데이터셋에서 우수한 추출 성능을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>청두중의약대 부속병원 및 지능의학대학 연구진이 개발한 임상 자연어처리 모델로, 한문·고전 용어와 현대 의학 표현이 혼재된 한의학 전자의무기록(EMR)에서 사진(四診) 정보, 해부학적 부위, 증상 속성을 자동으로 구조화합니다. 한방병원 진료 기록을 정형화해 대규모 후향적 임상 연구와 증례 데이터베이스를 구축하는 데 직접 활용됩니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41707487/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41707487</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>사진(四診)·설진 영상AI</h3>
+    <p class="en">Differential regional textural attributes of tongue in normal and acidity patients in the light of traditional Chinese medicine</p>
+    <p class="src">Comput Biol Med (2026.06; 213:111831)</p>
+    <div class="result"><span class="label">주요 성과</span><p>CIE LAB 색공간의 홍조 지표(a*)와 그레이스케일 영상의 2차 통계 질감 특징(GLCM 상관성 등)을 5개 설진 구역별로 추출한 뒤, Benjamini-Hochberg 다중…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>CIE LAB 색공간의 홍조 지표(a*)와 그레이스케일 영상의 2차 통계 질감 특징(GLCM 상관성 등)을 5개 설진 구역별로 추출한 뒤, Benjamini-Hochberg 다중검정 보정(q=0.05)을 적용한 비모수 검정으로 구역별·군별 정량적 차이를 규명했습니다.</dd></div><div><dt>임상적 의의</dt><dd>한의학 설진의 핵심 이론인 &#x27;혀의 부위별 장부 배속(심·신·간담·비위·폐)&#x27;을 디지털 영상 분석으로 검증한 연구입니다. 정상군과 위산과다(소화기 증상) 환자군의 설영상을 5개 장부 구역으로 분할 비교한 결과, 환자군에서는 비위 구역과 간담 구역 간 붉은기(a*) 차이가 유의하게 나타났으며 심·신·간담·비위 구역의 질감 상관성이 정상군과 뚜렷이 구별되어 소화기 한방 진료의 객관적 보조 지표로 활용될 수 있습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42372470/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42372470</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>뇌졸중·설진 AI 메타분석</h3>
+    <p class="en">Diagnostic accuracy of tongue diagnosis for stroke syndrome differentiation in traditional Chinese medicine: a systematic review, meta-analysis, and narrative synthesis of artificial intelligence-assisted models</p>
+    <p class="src">Front Neurol (2026.10; 17:1874937)</p>
+    <div class="result"><span class="label">주요 성과</span><p>수기 설진 연구는 이변량/단변량 랜덤효과 모델로 통합하고, AI 보조 설진 연구(4편, 1,246명)는 SWiM 가이드라인에 따라 알고리즘 구조와 참조표준 독립성, 교차검증 설계…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>수기 설진 연구는 이변량/단변량 랜덤효과 모델로 통합하고, AI 보조 설진 연구(4편, 1,246명)는 SWiM 가이드라인에 따라 알고리즘 구조와 참조표준 독립성, 교차검증 설계를 체계적으로 비교·평가했습니다.</dd></div><div><dt>임상적 의의</dt><dd>안후이중의약대 제1임상의학원 연구진이 뇌졸중 후 한의 변증 진단에서 수기 설진과 AI 보조 설진 모델의 실제 진단 정확도를 GRADE-DTA 기준으로 엄밀하게 평가한 체계적 문헌고찰 및 메타분석(10편, 총 3,437명: 수기 설진 6편 2,191명, AI 보조 4편 1,246명)입니다. 현재 수기 설진 단독 사용의 근거 확실성이 낮음을 짚고, AI 설진 모델이 임상 현장에 도입되기 위해 독립적 참조표준과 다기관 검증이 필수적임을 제시합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42908634/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42908634</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>정신신경·침구학AI</h3>
+    <p class="en">A machine learning-based discriminative framework for mild cognitive impairment risk in middle-aged and elderly Chinese patients with depression: evidence from CHARLS and CLHLS</p>
+    <p class="src">J Affect Disord (2025.11; 120701, Online ahead of print)</p>
+    <div class="result"><span class="label">주요 성과</span><p>8종의 머신러닝 알고리즘을 비교 학습한 결과, 랜덤 포레스트(RF) 모델이 훈련 <mark>AUC 0.826</mark>, 내부 검증 <mark>AUC 0.801</mark>로 가장 우수한 판별 성능과 균형 잡힌 민감도·특이…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>8종의 머신러닝 알고리즘을 비교 학습한 결과, 랜덤 포레스트(RF) 모델이 훈련 AUC 0.826, 내부 검증 AUC 0.801로 가장 우수한 판별 성능과 균형 잡힌 민감도·특이도를 보였으며, 대규모 외부 코호트(6,782명)를 통해 일반화 가능성을 검증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>청두중의약대 침구추나학원 연구진이 대규모 중노년 코호트(CHARLS 1,964명, 외부검증 CLHLS 6,782명)를 활용해 우울증을 앓는 중노년 환자의 경도인지장애(MCI) 동반 위험을 선별한 연구입니다. 한방 신경정신과 및 침구 외래에서 우울감과 인지 저하가 겹치기 쉬운 고령 환자를 조기에 가려내 두침·인지 재활 치료를 선제적으로 개입하는 데 유용합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41237961/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41237961</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
