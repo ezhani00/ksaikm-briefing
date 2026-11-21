@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.09">
-<meta property="og:description" content="오늘의 대표논문 · 국내 대사질환·스크리닝 AI (외 3편)">
+<meta property="og:description" content="오늘의 대표논문 · 50세 이상 한국 성인의 당뇨병을 설문·신체계측·간이 검사 수치로 가려내는 AI(XGBoost) (외 3편)">
 
 <meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
 <title>KSAIKM 일일 학술 브리핑</title>
@@ -101,12 +101,12 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
 </div></header>
 
 <section class="section"><div class="inner">
-  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>국내 대사질환·스크리닝 AI</h2></div>
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>50세 이상 한국 성인의 당뇨병을 설문·신체계측·간이 검사 수치로 가려내는 AI(XGBoost)</h2></div>
   <article class="card" style="border-color:var(--accent);border-width:2px">
-    <div class="num">01 · 국내 대사질환·스크리닝 AI</div>
+    <div class="num">01 · 당뇨병 선별 AI</div>
     <p class="en">Development and temporal external validation of a high-specificity XGBoost rule-in model for diabetes in middle-aged and older Korean adults</p>
     <p class="src">Diabetology &amp; Metabolic Syndrome (2026.06; 18:92)</p>
-    <div class="result"><span class="label">쉬운 요약</span><p>한의원 외래에 만성 피로, 부종, 수족 냉증 등으로 내원하는 중장년 및 고령층 환자 중 상당수가 본인이 당뇨병인지 모른 채 방치되어 있습니다. 일차 한의 진료실에서 정맥 채혈 없이 환자의 일상 문진과 기본 소변 검사만으로 추가 혈액 정밀 검사가 반드시 필요한 당뇨 고위험군을 오진(위양성) 없이 정확히 가려낼 수 있는 의사결정 도구가 필요했습니다. 본 연구는 한국인 대규모 중장년 코호트 데이터를 바탕으로, 진료실에서 비침습적으로 당뇨 환자를 높은 확률로 확진 선별(Rule-in)할 수 있는 인공지능 모델을 개발하여 한의 만성질환 관리 및 상급 병원 의뢰의 객관적 기준을 마련했습니다.</p></div>
+    <div class="result"><span class="label">쉬운 요약</span><p>한국 국민건강영양조사(KNHANES 2020-2023)의 만 50세 이상 자료로 당뇨병을 높은 특이도로 확진 선별(rule-in)하는 XGBoost 모델을 만들었습니다. 2020-2022년 자료로 개발하고 2023년 자료로 시간 외부 검증한 결과 AUROC 0.868, 특이도 97.3%, 양성예측도 76.7%였고, 민감도는 일부러 낮춘 설계입니다. 변수에는 설문·신체계측·혈압·병력과 함께 간이 검사 수치(소변 크레아티닌·비중·알부민, 총콜레스테롤 등)가 들어 있어, 메일의 &#x27;채혈 없이&#x27; 표현은 초록과 달라 원문 확인이 필요합니다. 저자는 대구한의대 소속이지만 한의 진료 연구는 아닙니다.</p></div>
     
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42226262/" target="_blank" rel="noopener">PubMed 원문</a></div>
   </article>
@@ -117,11 +117,11 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
 
   <article class="card">
     <div class="num">01</div>
-    <h3>국내 대사질환·스크리닝 AI</h3>
+    <h3>당뇨병 선별 AI</h3>
     <p class="en">Development and temporal external validation of a high-specificity XGBoost rule-in model for diabetes in middle-aged and older Korean adults</p>
-    <p class="src">Diabetology &amp; Metabolic Syndrome (2026.06; 18:92)</p>
-    <div class="result"><span class="label">주요 성과</span><p>소변 알부민, 소변 비중, 요크레아티닌 수치와 함께 허리둘레, 체질량지수(BMI), 고혈압 및 이상지질혈증 병력 등 진료실 기본 지표를 XGBoost 머신러닝 모델에 학습시켰습니…</p></div>
-    <dl><div><dt>핵심 모델</dt><dd>소변 알부민, 소변 비중, 요크레아티닌 수치와 함께 허리둘레, 체질량지수(BMI), 고혈압 및 이상지질혈증 병력 등 진료실 기본 지표를 XGBoost 머신러닝 모델에 학습시켰습니다. 위양성을 최소화하도록 설계된 고특이도(High-specificity) 구조를 통해, 독립적인 시계열 외부 코호트 검증에서도 기존 Random Forest 대비 우수한 룰인 성능과 높은 양성예측도를 달성했습니다. SHAP 분석을 통해 소변 지표와 복부 비만이 모델의 당뇨 확진 판정을 주도하는 핵심 기여 요인임을 규명했습니다.</dd></div><div><dt>임상적 의의</dt><dd>한의원 외래에 만성 피로, 부종, 수족 냉증 등으로 내원하는 중장년 및 고령층 환자 중 상당수가 본인이 당뇨병인지 모른 채 방치되어 있습니다. 일차 한의 진료실에서 정맥 채혈 없이 환자의 일상 문진과 기본 소변 검사만으로 추가 혈액 정밀 검사가 반드시 필요한 당뇨 고위험군을 오진(위양성) 없이 정확히 가려낼 수 있는 의사결정 도구가 필요했습니다. 본 연구는 한국인 대규모 중장년 코호트 데이터를 바탕으로, 진료실에서 비침습적으로 당뇨 환자를 높은 확률로 확진 선별(Rule-in)할 수 있는 인공지능 모델을 개발하여 한의 만성질환 관리 및 상급 병원 의뢰의 객관적 기준을 마련했습니다.</dd></div></dl>
+    <p class="src">Diabetology &amp; Metabolic Syndrome (2026.06; 18:92)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 직접 연구 아님</p>
+    <div class="result"><span class="label">주요 성과</span><p>시간 외부 검증 AUROC 0.868, 특이도 <mark>97.3%</mark>, 양성예측도 <mark>76.7%</mark> (민감도는 의도적으로 낮춤)</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>소변 알부민, 소변 비중, 요크레아티닌 수치와 함께 허리둘레, 체질량지수(BMI), 고혈압 및 이상지질혈증 병력 등 진료실 기본 지표를 XGBoost 머신러닝 모델에 학습시켰습니다. 위양성을 최소화하도록 설계된 고특이도(High-specificity) 구조를 통해, 독립적인 시계열 외부 코호트 검증에서도 기존 Random Forest 대비 우수한 룰인 성능과 높은 양성예측도를 달성했습니다. SHAP 분석을 통해 소변 지표와 복부 비만이 모델의 당뇨 확진 판정을 주도하는 핵심 기여 요인임을 규명했습니다.</dd></div><div><dt>임상적 의의</dt><dd>한국 국민건강영양조사(KNHANES 2020-2023)의 만 50세 이상 자료로 당뇨병을 높은 특이도로 확진 선별(rule-in)하는 XGBoost 모델을 만들었습니다. 2020-2022년 자료로 개발하고 2023년 자료로 시간 외부 검증한 결과 AUROC 0.868, 특이도 97.3%, 양성예측도 76.7%였고, 민감도는 일부러 낮춘 설계입니다. 변수에는 설문·신체계측·혈압·병력과 함께 간이 검사 수치(소변 크레아티닌·비중·알부민, 총콜레스테롤 등)가 들어 있어, 메일의 &#x27;채혈 없이&#x27; 표현은 초록과 달라 원문 확인이 필요합니다. 저자는 대구한의대 소속이지만 한의 진료 연구는 아닙니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42226262/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42226262</span></div>
   </article>
   <article class="card">
