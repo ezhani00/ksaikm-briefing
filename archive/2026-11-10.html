@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.10">
-<meta property="og:description" content="오늘의 대표논문 · 한의 중풍재활·의식장애 AI (외 3편)">
+<meta property="og:description" content="오늘의 대표논문 · 허혈성 뇌졸중 의식장애 ICU 환자의 30일 사망 위험을 입원 24시간 자료로 예측하는 AI(CatBoost) (외 3편)">
 
 <meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
 <title>KSAIKM 일일 학술 브리핑</title>
@@ -101,12 +101,12 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
 </div></header>
 
 <section class="section"><div class="inner">
-  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>한의 중풍재활·의식장애 AI</h2></div>
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>허혈성 뇌졸중 의식장애 ICU 환자의 30일 사망 위험을 입원 24시간 자료로 예측하는 AI(CatBoost)</h2></div>
   <article class="card" style="border-color:var(--accent);border-width:2px">
-    <div class="num">01 · 한의 중풍재활·의식장애 AI</div>
+    <div class="num">01 · 뇌졸중 사망 예측 AI</div>
     <p class="en">Development and validation of a machine learning model to predict 30-day mortality in ischemic stroke patients with consciousness impairment: Insights from MIMIC-IV database and multicenter ICU data in China</p>
     <p class="src">International Journal of Medical Informatics (2026.03; 207:106203)</p>
-    <div class="result"><span class="label">쉬운 요약</span><p>한의 중풍(뇌졸중) 진료에서 의식장애(혼미, 혼수 등 궐증 厥證)를 동반한 급성기 중증 환자는 한방병원 중환자실 및 병동에서 30일 내 사망할 위험이 매우 높습니다. 초기 골든타임 내에 집중적인 성뇌개규(醒腦開竅) 침구 치료나 안궁우황환 등 응급 한약 투여가 필요하지만, 어떤 환자가 급성 사망 고위험군인지 객관적으로 판별하는 도구가 부족했습니다. 본 연구는 3개 대형 상급병원 다기관 ICU 코호트를 바탕으로, 입원 초기 24시간 임상 지표만으로 단기 사망 위험을 사전에 정밀하게 가려내는 인공지능 모델을 개발하여 한의 중풍 급성기 환자의 집중 치료 및 전원 판단 기준을 마련했습니다.</p></div>
+    <div class="result"><span class="label">쉬운 요약</span><p>허혈성 뇌졸중에 의식장애가 동반된 ICU 환자의 30일 사망 위험을 입원 후 24시간 자료로 예측하는 CatBoost 모델입니다. 미국 MIMIC-IV 환자 529명(30일 사망 29.87%)으로 학습하고 중국 3개 상급병원 자료로 외부 검증해 내부 AUC 0.873, 외부 AUC 0.848이었으며, 음이온 갭이 가장 큰 사망 위험 요인이었습니다. 메일은 중국 3개 병원 자료로 개발했다고 적었지만 실제로는 외부 검증용입니다. 성뇌개규 침구나 안궁우황환 같은 한의 치료를 다룬 연구는 아닙니다.</p></div>
     
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41297432/" target="_blank" rel="noopener">PubMed 원문</a></div>
   </article>
@@ -117,11 +117,11 @@ dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
 
   <article class="card">
     <div class="num">01</div>
-    <h3>한의 중풍재활·의식장애 AI</h3>
+    <h3>뇌졸중 사망 예측 AI</h3>
     <p class="en">Development and validation of a machine learning model to predict 30-day mortality in ischemic stroke patients with consciousness impairment: Insights from MIMIC-IV database and multicenter ICU data in China</p>
-    <p class="src">International Journal of Medical Informatics (2026.03; 207:106203)</p>
-    <div class="result"><span class="label">주요 성과</span><p>데이터 불균형을 보정한 상태에서 CatBoost 알고리즘으로 모델을 학습시킨 결과, 내부 검증 <mark>AUC 0.873</mark>, 3개 대형병원 외부 검증에서도 <mark>84.8%</mark>의 높은 판별력(AUC …</p></div>
-    <dl><div><dt>핵심 모델</dt><dd>입원 초기 24시간 동안 수집된 임상 변수에서 XGBoost와 Random Forest를 사용해 9가지 핵심 예측 인자를 선별했습니다. 데이터 불균형을 보정한 상태에서 CatBoost 알고리즘으로 모델을 학습시킨 결과, 내부 검증 AUC 0.873, 3개 대형병원 외부 검증에서도 84.8%의 높은 판별력(AUC 0.848)을 달성했습니다. 의식 수준, 혈중 전해질, 염증 및 신장 수치 등 진료실 필수 지표만으로 단기 치명률을 신뢰성 있게 예측함을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>한의 중풍(뇌졸중) 진료에서 의식장애(혼미, 혼수 등 궐증 厥證)를 동반한 급성기 중증 환자는 한방병원 중환자실 및 병동에서 30일 내 사망할 위험이 매우 높습니다. 초기 골든타임 내에 집중적인 성뇌개규(醒腦開竅) 침구 치료나 안궁우황환 등 응급 한약 투여가 필요하지만, 어떤 환자가 급성 사망 고위험군인지 객관적으로 판별하는 도구가 부족했습니다. 본 연구는 3개 대형 상급병원 다기관 ICU 코호트를 바탕으로, 입원 초기 24시간 임상 지표만으로 단기 사망 위험을 사전에 정밀하게 가려내는 인공지능 모델을 개발하여 한의 중풍 급성기 환자의 집중 치료 및 전원 판단 기준을 마련했습니다.</dd></div></dl>
+    <p class="src">International Journal of Medical Informatics (2026.03; 207:106203)</p><p class="src" style="color:var(--accent-ink);font-weight:700">참고 · 한의 치료 연구 아님 (저자 소속 천진중의약대 침구 임상센터)</p>
+    <div class="result"><span class="label">주요 성과</span><p>CatBoost 내부 <mark>AUC 0.873</mark>, 중국 3개 병원 외부 <mark>AUC 0.848</mark></p></div>
+    <dl><div><dt>핵심 모델</dt><dd>입원 초기 24시간 동안 수집된 임상 변수에서 XGBoost와 Random Forest를 사용해 9가지 핵심 예측 인자를 선별했습니다. 데이터 불균형을 보정한 상태에서 CatBoost 알고리즘으로 모델을 학습시킨 결과, 내부 검증 AUC 0.873, 3개 대형병원 외부 검증에서도 84.8%의 높은 판별력(AUC 0.848)을 달성했습니다. 의식 수준, 혈중 전해질, 염증 및 신장 수치 등 진료실 필수 지표만으로 단기 치명률을 신뢰성 있게 예측함을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>허혈성 뇌졸중에 의식장애가 동반된 ICU 환자의 30일 사망 위험을 입원 후 24시간 자료로 예측하는 CatBoost 모델입니다. 미국 MIMIC-IV 환자 529명(30일 사망 29.87%)으로 학습하고 중국 3개 상급병원 자료로 외부 검증해 내부 AUC 0.873, 외부 AUC 0.848이었으며, 음이온 갭이 가장 큰 사망 위험 요인이었습니다. 메일은 중국 3개 병원 자료로 개발했다고 적었지만 실제로는 외부 검증용입니다. 성뇌개규 침구나 안궁우황환 같은 한의 치료를 다룬 연구는 아닙니다.</dd></div></dl>
     <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41297432/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41297432</span></div>
   </article>
   <article class="card">
