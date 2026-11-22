@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.22">
+<meta property="og:description" content="오늘의 대표논문 · 산둥중의약대 침구추나학원 및 제2부속병원 침구과 연구진이 9,306명(자살사고 동반 주요우울장애 247명 포함)의 대규모 데이터를 분석해 식이 항산화 성분과 중증 우울·자살사고 위험 간의 연관성을 규명한 연구입니다. (외 3편)">
+
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.22</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>산둥중의약대 침구추나학원 및 제2부속병원 침구과 연구진이 9,306명(자살사고 동반 주요우울장애 247명 포함)의 대규모 데이터를 분석해 식이 항산화 성분과 중증 우울·자살사고 위험 간의 연관성을 규명한 연구입니다.</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">04 · 정신신경·침구추나AI</div>
+    <p class="en">Machine learning and SHAP-based interpretation of dietary antioxidants&#x27; impact on comorbid MDD and suicidal ideation</p>
+    <p class="src">J Affect Disord (2026.01; 121252, Online ahead of print)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>산둥중의약대 침구추나학원 및 제2부속병원 침구과 연구진이 9,306명(자살사고 동반 주요우울장애 247명 포함)의 대규모 데이터를 분석해 식이 항산화 성분과 중증 우울·자살사고 위험 간의 연관성을 규명한 연구입니다. 한방 신경정신 및 침구 외래에서 정서 고위험군을 조기 선별하고, 비타민 C와 플라보노이드(캠페롤 등)가 풍부한 약선·식이 조절을 병행 치료로 권고하는 근거가 됩니다.</p></div>
+    
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41605358/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>한방외과·항문질환AI</h3>
+    <p class="en">Development and validation of a SHAP-interpretable GBM model for predicting postoperative recurrence of anal fistula</p>
+    <p class="src">PMC13554486 (2026.08)</p>
+    <div class="result"><span class="label">주요 성과</span><p>LASSO 회귀로 11개 핵심 예측 변수를 추출한 뒤 로지스틱 회귀, SVM, GBM, XGBoost, LightGBM, CatBoost 등 8종의 머신러닝 모델을 비교해 가장 …</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO 회귀로 11개 핵심 예측 변수를 추출한 뒤 로지스틱 회귀, SVM, GBM, XGBoost, LightGBM, CatBoost 등 8종의 머신러닝 모델을 비교해 가장 균형 잡힌 GBM 모델을 최종 채택했습니다. SHAP 해석 및 제한적 3차 스플라인(RCS) 분석을 통해 염증 지표(NCR, hs-CRP)와 재발 위험 간의 비선형 관계를 투명하게 시각화했습니다.</dd></div><div><dt>임상적 의의</dt><dd>난징중의약대 부속 난징중의병원 항문직장센터, 광안문병원, 상하이중의약대 연구진이 치루 절제술 환자 2,214명(훈련 1,242명, 테스트 530명, 독립 병동 검증 442명)을 2년간 추적 관찰한 대규모 임상 연구입니다. 한방 외과·치질 클리닉에서 일상적으로 시행하는 혈액검사(백혈구, 적혈구, hs-CRP, 호중구-C반응단백 비율 NCR)만으로 수술 후 재발 고위험군을 조기에 가려내어 좌욕·한약 훈증·맞춤형 추적 관리를 계획하는 데 직접 활용할 수 있습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42719412/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42719412</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>내분비·노인재활AI</h3>
+    <p class="en">Development, validation, and visualization of a machine learning-based predictive model for sarcopenia risk in patients with diabetes mellitus</p>
+    <p class="src">Front Med (Lausanne) (2026.08; 13:1904187)</p>
+    <div class="result"><span class="label">주요 성과</span><p>내부 검증에서는 LightGBM이 <mark>AUC 0.973</mark>으로 최고치를 기록했고, 외부 다기관 검증에서는 로지스틱 회귀 모델이 NHANES <mark>AUC 0.967</mark>(Brier 0.042), C…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO와 Boruta 기법으로 6대 핵심 인자를 선별한 후 7종의 머신러닝을 평가했습니다. 내부 검증에서는 LightGBM이 AUC 0.973으로 최고치를 기록했고, 외부 다기관 검증에서는 로지스틱 회귀 모델이 NHANES AUC 0.967(Brier 0.042), CHARLS AUC 0.949(Brier 0.061)로 가장 뛰어난 일반화 안정성을 입증했습니다.</dd></div><div><dt>임상적 의의</dt><dd>난징중의약대 부속 난징중의병원 내분비·대사 코호트(당뇨병 환자 1,074명: 근감소증 186명, 비근감소증 888명)를 기반으로 개발하고 미국 NHANES(1,078명)와 중국 CHARLS(547명) 두 개의 대규모 외부 코호트에서 검증한 연구입니다. 연령, 성별, 체질량지수(BMI), 혈색소, 요산, 크레아티닌 등 6가지 기본 진료 정보만으로 당뇨병성 근감소증 위험을 조기 선별해 한방 재활 및 보기보신(補氣補腎) 처방을 적시에 개입할 수 있습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42666448/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42666448</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>류마티스·자가면역AI</h3>
+    <p class="en">A machine-learning-derived online prediction model for risk during the activity period in SLE patients: a retrospective historical cross-sectional study</p>
+    <p class="src">BMC Rheumatol (2026.07; Online ahead of print)</p>
+    <div class="result"><span class="label">주요 성과</span><p>머신러닝 기반 변수 선별을 통해 6개 핵심 예측 인자를 도출하고, 높은 판별력을 갖춘 로지스틱 회귀 노모그램과 동적 온라인 위험 계산기를 구축해 임상의가 진료실에서 즉시 환자별 …</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>머신러닝 기반 변수 선별을 통해 6개 핵심 예측 인자를 도출하고, 높은 판별력을 갖춘 로지스틱 회귀 노모그램과 동적 온라인 위험 계산기를 구축해 임상의가 진료실에서 즉시 환자별 활성기 위험도를 산출할 수 있도록 했습니다.</dd></div><div><dt>임상적 의의</dt><dd>푸젠중의약대 부속 인민병원 류마티스과와 상하이중의약대 부속 웨양중서의결합병원 연구진이 전신홍반루푸스(SLE) 환자의 질병 활성기(악화기) 진입 위험을 비침습적으로 평가하기 위해 개발한 임상 연구입니다. 6가지 핵심 임상 지표(대사성 염증 매개 인자 NAG1 및 피브리노겐 매개 효과 9.3% 포함)를 온라인 계산기에 입력해 한양방 병행 치료 중 재발 위험을 실시간으로 모니터링할 수 있습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42421161/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42421161</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>정신신경·침구추나AI</h3>
+    <p class="en">Machine learning and SHAP-based interpretation of dietary antioxidants&#x27; impact on comorbid MDD and suicidal ideation</p>
+    <p class="src">J Affect Disord (2026.01; 121252, Online ahead of print)</p>
+    <div class="result"><span class="label">주요 성과</span><p>31종의 식이 항산화제와 9개의 인구·건강 변수를 전처리 및 클래스 불균형 보정 후 랜덤 포레스트(RF) 모델에 학습시켜 정확도 <mark>81.7%</mark>, 정밀도 0.814, 재현율 0.822…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>31종의 식이 항산화제와 9개의 인구·건강 변수를 전처리 및 클래스 불균형 보정 후 랜덤 포레스트(RF) 모델에 학습시켜 정확도 81.7%, 정밀도 0.814, 재현율 0.822, ROC-AUC 0.908, PR-AUC 0.930의 높은 성능을 달성했으며, SHAP 분석으로 개별 영양 성분의 기여도를 정량화했습니다.</dd></div><div><dt>임상적 의의</dt><dd>산둥중의약대 침구추나학원 및 제2부속병원 침구과 연구진이 9,306명(자살사고 동반 주요우울장애 247명 포함)의 대규모 데이터를 분석해 식이 항산화 성분과 중증 우울·자살사고 위험 간의 연관성을 규명한 연구입니다. 한방 신경정신 및 침구 외래에서 정서 고위험군을 조기 선별하고, 비타민 C와 플라보노이드(캠페롤 등)가 풍부한 약선·식이 조절을 병행 치료로 권고하는 근거가 됩니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41605358/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41605358</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
