@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KSAIKM 일일 학술 브리핑 · 2026.11.25">
+<meta property="og:description" content="오늘의 대표논문 · 베이징중의약대 제2임상의학원 및 침구추나학원 연구진이 만성 B형간염(HBV) 환자에게 흔히 동반되는 우울증 위험을 자가 설문지 의존 없이 객관적 임상·혈액 지표로 조기 선별한 연구입니다. (외 3편)">
+
+<meta name="description" content="한의인공지능학회 KSAIKM 일일 학술 브리핑: 한의학 × 인공지능 최신 임상 연구 동향">
+<title>KSAIKM 일일 학술 브리핑</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: ksaikm.kr과 같은 문법. 남색 상단 띠 → 초록 영문 소제목 + 가운데 정렬 제목 → 20px 둥근 흰 카드(번호·제목·영문 부제·설명) → 초록 알약 버튼 */
+:root {
+  --primary: #0A2463;
+  --secondary: #1e3a8a;
+  --accent: #10b981;
+  --accent-ink: #0b7a56;
+  --gray: #64748b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --line: #e2e8f0;
+  --result-bg: #f0f9f5;
+  --hero-from: #0A2463;
+  --hero-to: #3b2a6b;
+  --on-accent: #ffffff;
+  --font: "Noto Sans KR", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+    --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --primary: #e4ebff; --secondary: #b6c6f5; --accent: #34d399; --accent-ink: #34d399; --gray: #9aa9c2;
+  --bg: #0a1330; --surface: #101c44; --line: #22305f; --result-bg: #0f2a3a; --hero-from: #0A2463; --hero-to: #2a1f55; --on-accent: #062b1e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--primary); font-family: var(--font); font-size: 16px; line-height: 1.65; word-break: keep-all; overflow-wrap: anywhere; }
+.inner { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar .inner { padding-block: 14px; display: flex; align-items: baseline; gap: 10px; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--primary); }
+.logo-sub { font-size: 12.5px; color: var(--gray); border-left: 1px solid var(--line); padding-left: 10px; }
+.hero { background: linear-gradient(135deg, var(--hero-from), var(--hero-to)); color: #fff; text-align: center; }
+.hero .inner { padding-block: 48px 52px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .eyebrow { color: #6ee7b7; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-ink); }
+.hero h1 { margin: 0; font-size: clamp(26px, 7.2vw, 38px); line-height: 1.35; font-weight: 700; text-wrap: balance; }
+.hero p { margin: 4px 0 0; font-size: 15px; color: #d6defa; max-width: 34em; }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.stats span { font-size: 13.5px; border: 1px solid rgba(255,255,255,.45); border-radius: 30px; padding: 5px 14px; color: #fff; }
+.stats b { font-weight: 700; color: #6ee7b7; }
+.section .inner { padding-block: 40px 56px; display: flex; flex-direction: column; gap: 14px; }
+.head { text-align: center; display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; }
+.head h2 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 700; color: var(--primary); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 26px 22px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.num { font-size: 13px; font-weight: 700; color: var(--accent-ink); letter-spacing: .5px; }
+.card h3 { margin: -8px 0 0; font-size: 19px; line-height: 1.4; font-weight: 700; color: var(--primary); }
+.en { margin: -6px 0 0; font-size: 13.5px; font-weight: 500; color: var(--gray); line-height: 1.55; }
+.src { margin: -6px 0 0; font-size: 13px; color: var(--gray); }
+.result { background: var(--result-bg); border-radius: 14px; padding: 13px 16px; display: flex; flex-direction: column; gap: 3px; }
+.label { font-size: 12.5px; font-weight: 700; color: var(--accent-ink); letter-spacing: .3px; }
+.result p { margin: 0; font-size: 16px; font-weight: 500; color: var(--primary); }
+mark { background: transparent; color: var(--accent-ink); font-weight: 700; }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dl > div { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 10px; }
+dt { font-size: 13px; font-weight: 700; color: var(--secondary); padding-top: 2px; }
+dd { margin: 0; font-size: 14.5px; color: var(--gray); line-height: 1.7; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.btn { font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 30px; padding: 9px 22px; transition: all .3s ease; }
+.btn.fill { background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent); }
+.btn.line { background: transparent; color: var(--primary); border: 1px solid var(--line); }
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pmid { margin-left: auto; font-size: 12.5px; color: var(--gray); font-variant-numeric: tabular-nums; }
+.foot { background: var(--primary); color: #cfd8f3; }
+:root[data-theme="dark"] .foot { background: #070e24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .foot { background: #070e24; } }
+.foot .inner { padding-block: 26px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.foot b { color: #fff; font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="inner"><span class="logo">KSAIKM</span><span class="logo-sub">한의인공지능학회</span><a class="logo-sub" style="margin-left:auto;border-left:0;text-decoration:none;color:var(--accent-ink);font-weight:700" href="https://ezhani00.github.io/ksaikm-briefing/archive/">지난 브리핑 ›</a></div></div>
+
+<header class="hero"><div class="inner">
+  <div class="eyebrow">Daily Briefing · 2026.11.25</div>
+  <h1>한의학 × 인공지능<br>최신 임상 연구 동향</h1>
+  <p>오늘 새로 수집한 논문 4편의 핵심 결과를 정리했습니다.</p>
+  <div class="stats"><span>신규 수집 <b>4편</b></span></div>
+</div></header>
+
+<section class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">오늘의 대표논문</div><h2>베이징중의약대 제2임상의학원 및 침구추나학원 연구진이 만성 B형간염(HBV) 환자에게 흔히 동반되는 우울증 위험을 자가 설문지 의존 없이 객관적 임상·혈액 지표로 조기 선별한 연구입니다.</h2></div>
+  <article class="card" style="border-color:var(--accent);border-width:2px">
+    <div class="num">04 · 간울기체·정신신경AI</div>
+    <p class="en">Construction of a depression risk prediction model for hepatitis B patients based on machine learning strategy</p>
+    <p class="src">PLoS One (2026.02; 21(2):e0341236)</p>
+    <div class="result"><span class="label">쉬운 요약</span><p>베이징중의약대 제2임상의학원 및 침구추나학원 연구진이 만성 B형간염(HBV) 환자에게 흔히 동반되는 우울증 위험을 자가 설문지 의존 없이 객관적 임상·혈액 지표로 조기 선별한 연구입니다. 간기능 손상(총빌리루빈, ALP), 전해질 불균형(칼륨), 만성 염증(RDW, 림프구 수) 등이 핵심 인자로 규명되어, 한방 내과·침구 외래에서 간울기체(肝鬱氣滯) 변증 환자의 정서 합병증을 조기 포착하고 침구·소간해울(疏肝解鬱) 치료를 적시에 개입하는 데 유용합니다.</p></div>
+    
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41637463/" target="_blank" rel="noopener">PubMed 원문</a></div>
+  </article>
+</div></section>
+
+<main class="section"><div class="inner">
+  <div class="head"><div class="eyebrow">Today's Papers</div><h2>금일 신규 수집 논문 4선</h2></div>
+
+  <article class="card">
+    <div class="num">01</div>
+    <h3>한방응급·중환자 AI</h3>
+    <p class="en">Development and multi-database validation of machine learning models for 28-day mortality prediction in ICU patients with COPD and pulmonary hypertension</p>
+    <p class="src">Front Med (Lausanne) (2026.10; 13:1959885)</p>
+    <div class="result"><span class="label">주요 성과</span><p>랜덤 포레스트 모델이 훈련 <mark>AUC 0.938</mark>, 내부 검증 <mark>AUC 0.748</mark>, 독립된 외부 데이터베이스(eICU) 검증 <mark>AUC 0.800</mark>으로 가장 안정적인 성능을 입증했으며 SHA…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>LASSO 회귀로 12개 핵심 변수를 추출한 뒤 랜덤 포레스트(RF), XGBoost, LightGBM, SVM, 신경망 등 6종 알고리즘을 비교했습니다. 랜덤 포레스트 모델이 훈련 AUC 0.938, 내부 검증 AUC 0.748, 독립된 외부 데이터베이스(eICU) 검증 AUC 0.800으로 가장 안정적인 성능을 입증했으며 SHAP 분석으로 급성신손상과 염기과잉이 핵심 예측 인자임을 규명했습니다.</dd></div><div><dt>임상적 의의</dt><dd>저장성중의병원(저장성중의약대 제1부속병원) 연구진이 주도해 MIMIC-IV(2,555명)와 eICU CRD(292명) 등 총 2,847명의 만성폐쇄성폐질환(COPD) 및 폐고혈압 동반 중환자 데이터를 분석한 연구입니다. 급성신손상, 염기과잉, 적혈구분포폭(RDW), 폐렴, 심박수 등 12개 일상 임상 지표만으로 28일 이내 조기 사망 위험을 예측하는 웹 도구를 구축해, 한양방 협진 중환자·호흡기 진료 시 고위험 환자 조기 선별에 바로 활용할 수 있습니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42952783/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42952783</span></div>
+  </article>
+  <article class="card">
+    <div class="num">02</div>
+    <h3>소화기종양·의료영상 딥러닝AI</h3>
+    <p class="en">Cross-phase attention-based multi-phase CT deep learning for preoperative risk stratification of gastric gastrointestinal stromal tumors in a multicenter study</p>
+    <p class="src">Eur J Radiol (2026.09; 205:113237)</p>
+    <div class="result"><span class="label">주요 성과</span><p>내부 테스트 <mark>AUC 0.935</mark>(기존 임상-라디오믹스 모델 0.872 대비 유의 향상, P=0.016), 외부 검증 <mark>AUC 0.894</mark>를 달성해 영상의학과 전문의 3인의 판독(AUC…</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>조영 전, 동맥기, 정맥기 다중 위상 CT 영상을 병렬 ResNet50 인코더와 교차 위상 어텐션 모듈(Cross-Phase Attention Module)로 통합하는 딥러닝(MPFNet)을 개발했습니다. 내부 테스트 AUC 0.935(기존 임상-라디오믹스 모델 0.872 대비 유의 향상, P=0.016), 외부 검증 AUC 0.894를 달성해 영상의학과 전문의 3인의 판독(AUC 0.735~0.812)을 모두 상회했습니다.</dd></div><div><dt>임상적 의의</dt><dd>저장성중의약대 부속 통더병원 영상의학과 연구진이 다기관에서 2~5cm 크기 위장관 기질종양(GIST) 환자 427명(개발 240명, 시간적 내부테스트 59명, 외부검증 128명)을 대상으로 수술 전 악성·위험도 등급을 비침습적으로 판별한 연구입니다. 한양방 협진 소화기 종양 외래에서 조직검사나 수술 전 조영증강 CT 영상만으로 절제 전략 및 예후 관리 계획을 세우는 데 실질적인 도움을 줍니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42801804/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42801804</span></div>
+  </article>
+  <article class="card">
+    <div class="num">03</div>
+    <h3>한방종양·PET 라디오믹스AI</h3>
+    <p class="en">Predicting immunotherapy response in patients with non-small cell lung cancer: superior performance of a positron emission tomography radiomics-based stacking ensemble model</p>
+    <p class="src">Quant Imaging Med Surg (2026.11; 16(11):879)</p>
+    <div class="result"><span class="label">주요 성과</span><p>KNN, 로지스틱 회귀, 랜덤 포레스트를 결합한 스태킹 앙상블 모델이 독립 테스트셋 <mark>AUC 0.933</mark>(<mark>95%</mark> CI: 0.846-0.994)을 달성해 단일 모델(LR 0.896) …</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>3가지 종양 분할 방식(수동, SUV2.5 기준, 적응형 임계값)으로 PET 영상 특징을 추출한 뒤 상호정보·스피어만 상관·LASSO로 핵심 변수를 정제했습니다. KNN, 로지스틱 회귀, 랜덤 포레스트를 결합한 스태킹 앙상블 모델이 독립 테스트셋 AUC 0.933(95% CI: 0.846-0.994)을 달성해 단일 모델(LR 0.896) 및 딥러닝(0.925)을 앞섰습니다.</dd></div><div><dt>임상적 의의</dt><dd>저장성중의병원 핵의학과와 저장성중의약대 의료기술정보공학원이 공동으로 면역항암제 치료를 받은 비소세포폐암(NSCLC) 환자 45명의 치료 전 PET 영상을 분석해 약물 치료 반응성을 사전에 예측한 연구입니다. 한방 암 통합 진료 현장에서 면역항암제 반응이 기대되는 환자군과 저반응 우려군을 미리 파악해 부정거사(扶正祛邪) 한약·침구 병행 전략을 정밀하게 조정하는 근거가 됩니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/42997730/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 42997730</span></div>
+  </article>
+  <article class="card">
+    <div class="num">04</div>
+    <h3>간울기체·정신신경AI</h3>
+    <p class="en">Construction of a depression risk prediction model for hepatitis B patients based on machine learning strategy</p>
+    <p class="src">PLoS One (2026.02; 21(2):e0341236)</p>
+    <div class="result"><span class="label">주요 성과</span><p>그중 다층 퍼셉트론 신경망(MLPClassifier)이 <mark>AUC 0.935</mark>, 재현율 0.980, F1 점수 0.917로 가장 뛰어난 선별 성능을 보였습니다.</p></div>
+    <dl><div><dt>핵심 모델</dt><dd>클래스 불균형을 SMOTE 오버샘플링으로 보정하고 랜덤 포레스트로 상위 20개 핵심 변수를 선별한 뒤 5종 머신러닝 알고리즘을 비교했습니다. 그중 다층 퍼셉트론 신경망(MLPClassifier)이 AUC 0.935, 재현율 0.980, F1 점수 0.917로 가장 뛰어난 선별 성능을 보였습니다.</dd></div><div><dt>임상적 의의</dt><dd>베이징중의약대 제2임상의학원 및 침구추나학원 연구진이 만성 B형간염(HBV) 환자에게 흔히 동반되는 우울증 위험을 자가 설문지 의존 없이 객관적 임상·혈액 지표로 조기 선별한 연구입니다. 간기능 손상(총빌리루빈, ALP), 전해질 불균형(칼륨), 만성 염증(RDW, 림프구 수) 등이 핵심 인자로 규명되어, 한방 내과·침구 외래에서 간울기체(肝鬱氣滯) 변증 환자의 정서 합병증을 조기 포착하고 침구·소간해울(疏肝解鬱) 치료를 적시에 개입하는 데 유용합니다.</dd></div></dl>
+    <div class="links"><a class="btn fill" href="https://pubmed.ncbi.nlm.nih.gov/41637463/" target="_blank" rel="noopener">PubMed 원문</a><span class="pmid">PMID 41637463</span></div>
+  </article>
+</div></main>
+
+<footer class="foot"><div class="inner"><b>KSAIKM 한의인공지능학회</b><a href="https://ezhani00.github.io/ksaikm-briefing/archive/" style="color:#6ee7b7;text-decoration:none;font-weight:700">지난 브리핑 모두 보기 ›</a><span>Korean Society of AI in Korean Medicine · 본 페이지는 KSAIKM 일일 학술 모니터링 자동화 시스템이 수집한 내용을 정리한 것입니다. 임상적 의의는 브리핑 요약을 쉬운 말로 풀어 쓴 것이므로, 자세한 내용은 원문을 확인해 주세요.</span></div></footer>
+
+</body>
+</html>
